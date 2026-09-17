@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "run_id": "20260914_133617",
+    "host": "plaiground-desktop",
+    "python": "3.10.12 (main, Nov  4 2025, 08:48:33) [GCC 11.4.0]",
+    "constants": {
+      "GAMMA": 2e-26,
+      "F": 1500000000.0,
+      "ALPHA": 32.0,
+      "BETA": 3.8e-07,
+      "T_COMP": 5100.0,
+      "T_COMM": 300.0,
+      "R_MAX": 10000000.0,
+      "P_SUN": 40.0,
+      "E_MAX": 828000.0
+    },
+    "args": {
+      "results_json": "/home/plaiground/stanisic/anela_overhead_sweep/results.json",
+      "model": "resnet50",
+      "points": "5,10,20,100,500,1000",
+      "orbits": 10,
+      "interval_s": 60.0,
+      "runs": 5,
+      "min_seconds": 20.0,
+      "power_interval_ms": 20,
+      "seed": 1337,
+      "output_dir": "/home/plaiground/stanisic/anela_overhead_sweep/search_space_sweep"
+    },
+    "idle_power_w": 3.570052425716038,
+    "device_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+    "power_mode": "NV Power Mode: 25W\n1\n"
+  },
+  "summary": [
+    {
+      "latency_ms": 0.01879741458208036,
+      "energy_per_decision_mj": 0.0756695218690199,
+      "dynamic_energy_per_decision_mj": 0.008561648652296156,
+      "avg_power_w": 4.025530210798799,
+      "num_points": 5,
+      "runs": 5,
+      "latency_ms_std": 3.754565440022305e-05,
+      "energy_per_decision_mj_std": 0.0001298521277493804
+    },
+    {
+      "latency_ms": 0.03533161781678199,
+      "energy_per_decision_mj": 0.14317873339449247,
+      "dynamic_energy_per_decision_mj": 0.017042865207374813,
+      "avg_power_w": 4.052436539609222,
+      "num_points": 10,
+      "runs": 5,
+      "latency_ms_std": 4.499007764434804e-05,
+      "energy_per_decision_mj_std": 0.0004195767280484466
+    },
+    {
+      "latency_ms": 0.06766459240133976,
+      "energy_per_decision_mj": 0.2741712438934081,
+      "dynamic_energy_per_decision_mj": 0.032604830996692855,
+      "avg_power_w": 4.051908672950591,
+      "num_points": 20,
+      "runs": 5,
+      "latency_ms_std": 0.0001727762958459565,
+      "energy_per_decision_mj_std": 0.0011025845752971255
+    },
+    {
+      "latency_ms": 0.3317800114215964,
+      "energy_per_decision_mj": 1.3514473634849828,
+      "dynamic_energy_per_decision_mj": 0.16697397590213756,
+      "avg_power_w": 4.073316530370518,
+      "num_points": 100,
+      "runs": 5,
+      "latency_ms_std": 0.00040679714308052776,
+      "energy_per_decision_mj_std": 0.003152581381854814
+    },
+    {
+      "latency_ms": 1.6721317050350812,
+      "energy_per_decision_mj": 6.849139704658148,
+      "dynamic_energy_per_decision_mj": 0.8795353121249331,
+      "avg_power_w": 4.096040120100024,
+      "num_points": 500,
+      "runs": 5,
+      "latency_ms_std": 0.001562356712746522,
+      "energy_per_decision_mj_std": 0.03248063860996006
+    },
+    {
+      "latency_ms": 3.351945887382659,
+      "energy_per_decision_mj": 13.71585190713461,
+      "dynamic_energy_per_decision_mj": 1.7492189783586676,
+      "avg_power_w": 4.091884530090573,
+      "num_points": 1000,
+      "runs": 5,
+      "latency_ms_std": 0.035689895694919115,
+      "energy_per_decision_mj_std": 0.15450386262825924
+    }
+  ]
+}

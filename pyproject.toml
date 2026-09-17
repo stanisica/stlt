@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stlt-artifact"
+version = "0.1.0"
+description = "Reproduction artifact for STLT energy-aware satellite-ground inference"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "matplotlib==3.10.0",
+  "numpy==2.2.4",
+]
+
+[project.scripts]
+stlt-artifact = "stlt_artifact.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

@@ -1,0 +1,2777 @@
+{
+  "figure7": {
+    "rows": [
+      {
+        "model": "squeezenet1_1",
+        "level": "nominal",
+        "policy": "STLT",
+        "offered": 180400.0,
+        "admitted": 166803.0,
+        "delivered": 163039.0,
+        "not_started": 13597.0,
+        "admitted_not_delivered": 3764.0,
+        "energy_j": 2518241.629332537,
+        "wasted_energy_j": 41302.17423882954,
+        "effective_per_offered_j": 13.730263054843167,
+        "wasted_per_offered_j": 0.22894775076956508,
+        "energy_per_offered_j": 13.959210805612733,
+        "delivery_pct": 90.37638580931264,
+        "delivery_min_pct": 63.41463414634146,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 8.044262616665963,
+        "selected_layers": {
+          "34": 65512.0,
+          "65": 101291.0
+        }
+      },
+      {
+        "model": "squeezenet1_1",
+        "level": "nominal",
+        "policy": "SLICE",
+        "offered": 180400.0,
+        "admitted": 162760.0,
+        "delivered": 147999.0,
+        "not_started": 17640.0,
+        "admitted_not_delivered": 14761.0,
+        "energy_j": 2629317.366181438,
+        "wasted_energy_j": 238429.6488490234,
+        "effective_per_offered_j": 13.253257856609835,
+        "wasted_per_offered_j": 1.3216721111364933,
+        "energy_per_offered_j": 14.57492996774633,
+        "delivery_pct": 82.03935698447894,
+        "delivery_min_pct": 60.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 9.589986941212414,
+        "selected_layers": {
+          "65": 162760.0
+        }
+      },
+      {
+        "model": "squeezenet1_1",
+        "level": "nominal",
+        "policy": "TOBC",
+        "offered": 180400.0,
+        "admitted": 161611.0,
+        "delivered": 147168.0,
+        "not_started": 18789.0,
+        "admitted_not_delivered": 14443.0,
+        "energy_j": 2630688.22531512,
+        "wasted_energy_j": 253225.11012939372,
+        "effective_per_offered_j": 13.178842101916443,
+        "wasted_per_offered_j": 1.4036868632449764,
+        "energy_per_offered_j": 14.58252896516142,
+        "delivery_pct": 81.57871396895787,
+        "delivery_min_pct": 60.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 9.538941330991653,
+        "selected_layers": {
+          "65": 161611.0
+        }
+      },
+      {
+        "model": "squeezenet1_1",
+        "level": "nominal",
+        "policy": "TOGC",
+        "offered": 180400.0,
+        "admitted": 180400.0,
+        "delivered": 3300.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 177100.0,
+        "energy_j": 428999.99999998976,
+        "wasted_energy_j": 83523.56812799991,
+        "effective_per_offered_j": 1.915057826341407,
+        "wasted_per_offered_j": 0.46299095414634095,
+        "energy_per_offered_j": 2.378048780487748,
+        "delivery_pct": 1.829268292682927,
+        "delivery_min_pct": 1.829268292682927,
+        "delivery_max_pct": 1.829268292682927,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 180400.0
+        }
+      },
+      {
+        "model": "squeezenet1_1",
+        "level": "nominal",
+        "policy": "RAND",
+        "offered": 180400.0,
+        "admitted": 180400.0,
+        "delivered": 12936.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 167464.0,
+        "energy_j": 1440146.0827740745,
+        "wasted_energy_j": 982537.5968914831,
+        "effective_per_offered_j": 2.536632405114143,
+        "wasted_per_offered_j": 5.446439007158997,
+        "energy_per_offered_j": 7.983071412273141,
+        "delivery_pct": 7.170731707317073,
+        "delivery_min_pct": 7.170731707317073,
+        "delivery_max_pct": 7.170731707317073,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 36080.0,
+          "19": 36256.0,
+          "34": 36916.0,
+          "4": 36608.0,
+          "65": 34540.0
+        }
+      },
+      {
+        "model": "squeezenet1_1",
+        "level": "threequarter",
+        "policy": "STLT",
+        "offered": 133100.0,
+        "admitted": 132843.0,
+        "delivered": 132736.0,
+        "not_started": 257.0,
+        "admitted_not_delivered": 107.0,
+        "energy_j": 1981858.2418507694,
+        "wasted_energy_j": 872.7643048234538,
+        "effective_per_offered_j": 14.883437096513493,
+        "wasted_per_offered_j": 0.006557207399124371,
+        "energy_per_offered_j": 14.889994303912617,
+        "delivery_pct": 99.72652141247183,
+        "delivery_min_pct": 80.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 1.8725592745246793,
+        "selected_layers": {
+          "34": 66000.0,
+          "65": 66843.0
+        }
+      },
+      {
+        "model": "squeezenet1_1",
+        "level": "threequarter",
+        "policy": "SLICE",
+        "offered": 133100.0,
+        "admitted": 132703.0,
+        "delivered": 132020.0,
+        "not_started": 397.0,
+        "admitted_not_delivered": 683.0,
+        "energy_j": 2143783.1505609066,
+        "wasted_energy_j": 11032.277634569684,
+        "effective_per_offered_j": 16.02367297465317,
+        "wasted_per_offered_j": 0.08288713474507652,
+        "energy_per_offered_j": 16.106560109398245,
+        "delivery_pct": 99.18858001502629,
+        "delivery_min_pct": 80.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 3.8322313486934663,
+        "selected_layers": {
+          "65": 132703.0
+        }
+      },
+      {
+        "model": "squeezenet1_1",
+        "level": "threequarter",
+        "policy": "TOBC",
+        "offered": 133100.0,
+        "admitted": 132694.0,
+        "delivered": 132011.0,
+        "not_started": 406.0,
+        "admitted_not_delivered": 683.0,
+        "energy_j": 2143850.022669465,
+        "wasted_energy_j": 11244.542546181307,
+        "effective_per_offered_j": 16.022580617004383,
+        "wasted_per_offered_j": 0.08448191244313528,
+        "energy_per_offered_j": 16.107062529447518,
+        "delivery_pct": 99.18181818181819,
+        "delivery_min_pct": 80.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 3.8498390865775396,
+        "selected_layers": {
+          "65": 132694.0
+        }
+      },
+      {
+        "model": "squeezenet1_1",
+        "level": "threequarter",
+        "policy": "TOGC",
+        "offered": 133100.0,
+        "admitted": 133100.0,
+        "delivered": 3300.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 129800.0,
+        "energy_j": 428999.99999998976,
+        "wasted_energy_j": 83523.56812799991,
+        "effective_per_offered_j": 2.5956155662809155,
+        "wasted_per_offered_j": 0.6275249295867762,
+        "energy_per_offered_j": 3.2231404958676917,
+        "delivery_pct": 2.479338842975207,
+        "delivery_min_pct": 2.479338842975207,
+        "delivery_max_pct": 2.479338842975207,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 133100.0
+        }
+      },
+      {
+        "model": "squeezenet1_1",
+        "level": "threequarter",
+        "policy": "RAND",
+        "offered": 133100.0,
+        "admitted": 133100.0,
+        "delivered": 13772.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 119328.0,
+        "energy_j": 1178145.2745876457,
+        "wasted_energy_j": 705305.1299615267,
+        "effective_per_offered_j": 3.552517991180458,
+        "wasted_per_offered_j": 5.299061832919059,
+        "energy_per_offered_j": 8.851579824099517,
+        "delivery_pct": 10.347107438016529,
+        "delivery_min_pct": 10.347107438016529,
+        "delivery_max_pct": 10.347107438016529,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 26884.0,
+          "19": 26180.0,
+          "34": 26796.0,
+          "4": 27236.0,
+          "65": 26004.0
+        }
+      },
+      {
+        "model": "squeezenet1_1",
+        "level": "half",
+        "policy": "STLT",
+        "offered": 90200.0,
+        "admitted": 90200.0,
+        "delivered": 90200.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 0.0,
+        "energy_j": 1293588.8607273889,
+        "wasted_energy_j": 0.0,
+        "effective_per_offered_j": 14.341339919372382,
+        "wasted_per_offered_j": 0.0,
+        "energy_per_offered_j": 14.341339919372382,
+        "delivery_pct": 100.0,
+        "delivery_min_pct": 100.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "34": 66000.0,
+          "65": 24200.0
+        }
+      },
+      {
+        "model": "squeezenet1_1",
+        "level": "half",
+        "policy": "SLICE",
+        "offered": 90200.0,
+        "admitted": 90200.0,
+        "delivered": 90200.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 0.0,
+        "energy_j": 1457158.9815024682,
+        "wasted_energy_j": 0.0,
+        "effective_per_offered_j": 16.154755892488563,
+        "wasted_per_offered_j": 0.0,
+        "energy_per_offered_j": 16.154755892488563,
+        "delivery_pct": 100.0,
+        "delivery_min_pct": 100.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "65": 90200.0
+        }
+      },
+      {
+        "model": "squeezenet1_1",
+        "level": "half",
+        "policy": "TOBC",
+        "offered": 90200.0,
+        "admitted": 90200.0,
+        "delivered": 90200.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 0.0,
+        "energy_j": 1457158.981502454,
+        "wasted_energy_j": 0.0,
+        "effective_per_offered_j": 16.154755892488403,
+        "wasted_per_offered_j": 0.0,
+        "energy_per_offered_j": 16.154755892488403,
+        "delivery_pct": 100.0,
+        "delivery_min_pct": 100.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "65": 90200.0
+        }
+      },
+      {
+        "model": "squeezenet1_1",
+        "level": "half",
+        "policy": "TOGC",
+        "offered": 90200.0,
+        "admitted": 90200.0,
+        "delivered": 3300.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 86900.0,
+        "energy_j": 428999.99999998976,
+        "wasted_energy_j": 83523.56812799991,
+        "effective_per_offered_j": 3.830115652682814,
+        "wasted_per_offered_j": 0.9259819082926819,
+        "energy_per_offered_j": 4.756097560975496,
+        "delivery_pct": 3.658536585365854,
+        "delivery_min_pct": 3.658536585365854,
+        "delivery_max_pct": 3.658536585365854,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 90200.0
+        }
+      },
+      {
+        "model": "squeezenet1_1",
+        "level": "half",
+        "policy": "RAND",
+        "offered": 90200.0,
+        "admitted": 90200.0,
+        "delivered": 12848.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 77352.0,
+        "energy_j": 939284.8696733067,
+        "wasted_energy_j": 477082.1792239911,
+        "effective_per_offered_j": 5.124198342010151,
+        "wasted_per_offered_j": 5.289159414900123,
+        "energy_per_offered_j": 10.413357756910274,
+        "delivery_pct": 14.24390243902439,
+        "delivery_min_pct": 14.24390243902439,
+        "delivery_max_pct": 14.24390243902439,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 18788.0,
+          "19": 16588.0,
+          "34": 17908.0,
+          "4": 18744.0,
+          "65": 18172.0
+        }
+      },
+      {
+        "model": "swin_v2_t",
+        "level": "nominal",
+        "policy": "STLT",
+        "offered": 14300.0,
+        "admitted": 14110.0,
+        "delivered": 14019.0,
+        "not_started": 190.0,
+        "admitted_not_delivered": 91.0,
+        "energy_j": 2321944.7471935623,
+        "wasted_energy_j": 12334.019600016729,
+        "effective_per_offered_j": 161.51123969185636,
+        "wasted_per_offered_j": 0.862518853148023,
+        "energy_per_offered_j": 162.37375854500436,
+        "delivery_pct": 98.03496503496504,
+        "delivery_min_pct": 78.46153846153847,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 4.840640999536018,
+        "selected_layers": {
+          "0": 3298.0,
+          "112": 1098.0,
+          "327": 9714.0
+        }
+      },
+      {
+        "model": "swin_v2_t",
+        "level": "nominal",
+        "policy": "SLICE",
+        "offered": 14300.0,
+        "admitted": 13421.0,
+        "delivered": 12679.0,
+        "not_started": 879.0,
+        "admitted_not_delivered": 742.0,
+        "energy_j": 2550952.842973194,
+        "wasted_energy_j": 141032.11244030457,
+        "effective_per_offered_j": 168.5259252120902,
+        "wasted_per_offered_j": 9.862385485335984,
+        "energy_per_offered_j": 178.38831069742616,
+        "delivery_pct": 88.66433566433567,
+        "delivery_min_pct": 60.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 9.975343016441409,
+        "selected_layers": {
+          "327": 13421.0
+        }
+      },
+      {
+        "model": "swin_v2_t",
+        "level": "nominal",
+        "policy": "TOBC",
+        "offered": 14300.0,
+        "admitted": 13352.0,
+        "delivered": 12389.0,
+        "not_started": 948.0,
+        "admitted_not_delivered": 963.0,
+        "energy_j": 2563785.332012973,
+        "wasted_energy_j": 208985.4321334885,
+        "effective_per_offered_j": 164.671321669894,
+        "wasted_per_offered_j": 14.614365883460735,
+        "energy_per_offered_j": 179.28568755335473,
+        "delivery_pct": 86.63636363636364,
+        "delivery_min_pct": 60.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 10.078913239022858,
+        "selected_layers": {
+          "327": 13352.0
+        }
+      },
+      {
+        "model": "swin_v2_t",
+        "level": "nominal",
+        "policy": "TOGC",
+        "offered": 14300.0,
+        "admitted": 14300.0,
+        "delivered": 3300.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 11000.0,
+        "energy_j": 428999.99999998976,
+        "wasted_energy_j": 83523.56812799991,
+        "effective_per_offered_j": 24.15919103999929,
+        "wasted_per_offered_j": 5.840808959999994,
+        "energy_per_offered_j": 29.999999999999282,
+        "delivery_pct": 23.076923076923077,
+        "delivery_min_pct": 23.076923076923077,
+        "delivery_max_pct": 23.076923076923077,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 14300.0
+        }
+      },
+      {
+        "model": "swin_v2_t",
+        "level": "nominal",
+        "policy": "RAND",
+        "offered": 14300.0,
+        "admitted": 14300.0,
+        "delivered": 7259.4,
+        "not_started": 0.0,
+        "admitted_not_delivered": 7040.6,
+        "energy_j": 1591638.396619729,
+        "wasted_energy_j": 589771.8224111181,
+        "effective_per_offered_j": 70.06059959500776,
+        "wasted_per_offered_j": 41.242784783994274,
+        "energy_per_offered_j": 111.30338437900203,
+        "delivery_pct": 50.765034965034964,
+        "delivery_min_pct": 49.84615384615385,
+        "delivery_max_pct": 50.76923076923077,
+        "delivery_std_pct": 0.062233833458145205,
+        "selected_layers": {
+          "0": 5368.0,
+          "112": 4400.0,
+          "327": 4532.0
+        }
+      },
+      {
+        "model": "swin_v2_t",
+        "level": "threequarter",
+        "policy": "STLT",
+        "offered": 11000.0,
+        "admitted": 10998.0,
+        "delivered": 10992.0,
+        "not_started": 2.0,
+        "admitted_not_delivered": 6.0,
+        "energy_j": 1732411.1129129145,
+        "wasted_energy_j": 926.5153835488284,
+        "effective_per_offered_j": 157.4076906844878,
+        "wasted_per_offered_j": 0.08422867123171167,
+        "energy_per_offered_j": 157.4919193557195,
+        "delivery_pct": 99.92727272727272,
+        "delivery_min_pct": 84.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 1.0787197799411874,
+        "selected_layers": {
+          "0": 3300.0,
+          "112": 1100.0,
+          "327": 6598.0
+        }
+      },
+      {
+        "model": "swin_v2_t",
+        "level": "threequarter",
+        "policy": "SLICE",
+        "offered": 11000.0,
+        "admitted": 10971.0,
+        "delivered": 10947.0,
+        "not_started": 29.0,
+        "admitted_not_delivered": 24.0,
+        "energy_j": 2085278.006828752,
+        "wasted_energy_j": 4561.685577583975,
+        "effective_per_offered_j": 189.15602920465165,
+        "wasted_per_offered_j": 0.4146986888712704,
+        "energy_per_offered_j": 189.57072789352293,
+        "delivery_pct": 99.51818181818182,
+        "delivery_min_pct": 80.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 2.829175519836537,
+        "selected_layers": {
+          "327": 10971.0
+        }
+      },
+      {
+        "model": "swin_v2_t",
+        "level": "threequarter",
+        "policy": "TOBC",
+        "offered": 11000.0,
+        "admitted": 10970.0,
+        "delivered": 10937.0,
+        "not_started": 30.0,
+        "admitted_not_delivered": 33.0,
+        "energy_j": 2085984.7695125383,
+        "wasted_energy_j": 7169.166559763714,
+        "effective_per_offered_j": 188.98323663207043,
+        "wasted_per_offered_j": 0.651742414523974,
+        "energy_per_offered_j": 189.6349790465944,
+        "delivery_pct": 99.42727272727272,
+        "delivery_min_pct": 80.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 3.149136551686924,
+        "selected_layers": {
+          "327": 10970.0
+        }
+      },
+      {
+        "model": "swin_v2_t",
+        "level": "threequarter",
+        "policy": "TOGC",
+        "offered": 11000.0,
+        "admitted": 11000.0,
+        "delivered": 3300.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 7700.0,
+        "energy_j": 428999.99999998976,
+        "wasted_energy_j": 83523.56812799991,
+        "effective_per_offered_j": 31.406948351999077,
+        "wasted_per_offered_j": 7.593051647999992,
+        "energy_per_offered_j": 38.99999999999907,
+        "delivery_pct": 30.0,
+        "delivery_min_pct": 30.0,
+        "delivery_max_pct": 30.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 11000.0
+        }
+      },
+      {
+        "model": "swin_v2_t",
+        "level": "threequarter",
+        "policy": "RAND",
+        "offered": 11000.0,
+        "admitted": 11000.0,
+        "delivered": 7480.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 3520.0,
+        "energy_j": 1287529.5572552024,
+        "wasted_energy_j": 243767.29018483387,
+        "effective_per_offered_j": 94.88747882457896,
+        "wasted_per_offered_j": 22.160662744075807,
+        "energy_per_offered_j": 117.04814156865477,
+        "delivery_pct": 68.0,
+        "delivery_min_pct": 68.0,
+        "delivery_max_pct": 68.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 4180.0,
+          "112": 3564.0,
+          "327": 3256.0
+        }
+      },
+      {
+        "model": "swin_v2_t",
+        "level": "half",
+        "policy": "STLT",
+        "offered": 6600.0,
+        "admitted": 6600.0,
+        "delivered": 6600.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 0.0,
+        "energy_j": 896534.4852502089,
+        "wasted_energy_j": 0.0,
+        "effective_per_offered_j": 135.83855837124378,
+        "wasted_per_offered_j": 0.0,
+        "energy_per_offered_j": 135.83855837124378,
+        "delivery_pct": 100.0,
+        "delivery_min_pct": 100.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 3300.0,
+          "112": 1100.0,
+          "327": 2200.0
+        }
+      },
+      {
+        "model": "swin_v2_t",
+        "level": "half",
+        "policy": "SLICE",
+        "offered": 6600.0,
+        "admitted": 6600.0,
+        "delivered": 6600.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 0.0,
+        "energy_j": 797400.1663897263,
+        "wasted_energy_j": 0.0,
+        "effective_per_offered_j": 120.81820702874641,
+        "wasted_per_offered_j": 0.0,
+        "energy_per_offered_j": 120.81820702874641,
+        "delivery_pct": 100.0,
+        "delivery_min_pct": 100.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "112": 6600.0
+        }
+      },
+      {
+        "model": "swin_v2_t",
+        "level": "half",
+        "policy": "TOBC",
+        "offered": 6600.0,
+        "admitted": 6600.0,
+        "delivered": 6600.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 0.0,
+        "energy_j": 1254474.0769395924,
+        "wasted_energy_j": 0.0,
+        "effective_per_offered_j": 190.07182983933217,
+        "wasted_per_offered_j": 0.0,
+        "energy_per_offered_j": 190.07182983933217,
+        "delivery_pct": 100.0,
+        "delivery_min_pct": 100.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "327": 6600.0
+        }
+      },
+      {
+        "model": "swin_v2_t",
+        "level": "half",
+        "policy": "TOGC",
+        "offered": 6600.0,
+        "admitted": 6600.0,
+        "delivered": 3300.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 3300.0,
+        "energy_j": 428999.99999998976,
+        "wasted_energy_j": 83523.56812799991,
+        "effective_per_offered_j": 52.34491391999846,
+        "wasted_per_offered_j": 12.655086079999986,
+        "energy_per_offered_j": 64.99999999999845,
+        "delivery_pct": 50.0,
+        "delivery_min_pct": 50.0,
+        "delivery_max_pct": 50.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 6600.0
+        }
+      },
+      {
+        "model": "swin_v2_t",
+        "level": "half",
+        "policy": "RAND",
+        "offered": 6600.0,
+        "admitted": 6600.0,
+        "delivered": 6248.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 352.0,
+        "energy_j": 887103.9146555131,
+        "wasted_energy_j": 34849.9102959162,
+        "effective_per_offered_j": 129.12939459993893,
+        "wasted_per_offered_j": 5.280289438775181,
+        "energy_per_offered_j": 134.40968403871412,
+        "delivery_pct": 94.66666666666667,
+        "delivery_min_pct": 94.66666666666667,
+        "delivery_max_pct": 94.66666666666667,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 2640.0,
+          "112": 1892.0,
+          "327": 2068.0
+        }
+      },
+      {
+        "model": "efficientnet_b4",
+        "level": "nominal",
+        "policy": "STLT",
+        "offered": 46200.0,
+        "admitted": 46102.0,
+        "delivered": 46046.0,
+        "not_started": 98.0,
+        "admitted_not_delivered": 56.0,
+        "energy_j": 2052180.1270175395,
+        "wasted_energy_j": 1374.303577750234,
+        "effective_per_offered_j": 44.38973643809068,
+        "wasted_per_offered_j": 0.0297468306872345,
+        "energy_per_offered_j": 44.41948326877791,
+        "delivery_pct": 99.66666666666667,
+        "delivery_min_pct": 80.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 2.0544065458938023,
+        "selected_layers": {
+          "164": 27499.0,
+          "502": 18603.0
+        }
+      },
+      {
+        "model": "efficientnet_b4",
+        "level": "nominal",
+        "policy": "SLICE",
+        "offered": 46200.0,
+        "admitted": 41730.0,
+        "delivered": 38328.0,
+        "not_started": 4470.0,
+        "admitted_not_delivered": 3402.0,
+        "energy_j": 2622778.9312182334,
+        "wasted_energy_j": 213813.14902813183,
+        "effective_per_offered_j": 52.142116497621245,
+        "wasted_per_offered_j": 4.627990238704152,
+        "energy_per_offered_j": 56.770106736325396,
+        "delivery_pct": 82.96103896103897,
+        "delivery_min_pct": 60.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 9.497655285371312,
+        "selected_layers": {
+          "502": 41730.0
+        }
+      },
+      {
+        "model": "efficientnet_b4",
+        "level": "nominal",
+        "policy": "TOBC",
+        "offered": 46200.0,
+        "admitted": 41443.0,
+        "delivered": 37752.0,
+        "not_started": 4757.0,
+        "admitted_not_delivered": 3691.0,
+        "energy_j": 2627648.075525078,
+        "wasted_energy_j": 254884.65950440313,
+        "effective_per_offered_j": 51.358515498283,
+        "wasted_per_offered_j": 5.516983971956778,
+        "energy_per_offered_j": 56.87549947023978,
+        "delivery_pct": 81.71428571428571,
+        "delivery_min_pct": 60.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 9.63056066774391,
+        "selected_layers": {
+          "502": 41443.0
+        }
+      },
+      {
+        "model": "efficientnet_b4",
+        "level": "nominal",
+        "policy": "TOGC",
+        "offered": 46200.0,
+        "admitted": 46200.0,
+        "delivered": 3300.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 42900.0,
+        "energy_j": 428999.99999998976,
+        "wasted_energy_j": 83523.56812799991,
+        "effective_per_offered_j": 7.477844845714066,
+        "wasted_per_offered_j": 1.8078694399999982,
+        "energy_per_offered_j": 9.285714285714064,
+        "delivery_pct": 7.142857142857143,
+        "delivery_min_pct": 7.142857142857143,
+        "delivery_max_pct": 7.142857142857143,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 46200.0
+        }
+      },
+      {
+        "model": "efficientnet_b4",
+        "level": "nominal",
+        "policy": "RAND",
+        "offered": 46200.0,
+        "admitted": 46200.0,
+        "delivered": 9856.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 36344.0,
+        "energy_j": 1290623.6754726868,
+        "wasted_energy_j": 702067.1992440285,
+        "effective_per_offered_j": 12.739317667286974,
+        "wasted_per_offered_j": 15.196259723896722,
+        "energy_per_offered_j": 27.935577391183696,
+        "delivery_pct": 21.333333333333332,
+        "delivery_min_pct": 21.333333333333332,
+        "delivery_max_pct": 21.333333333333332,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 10384.0,
+          "102": 8712.0,
+          "164": 9636.0,
+          "40": 8536.0,
+          "502": 8932.0
+        }
+      },
+      {
+        "model": "efficientnet_b4",
+        "level": "threequarter",
+        "policy": "STLT",
+        "offered": 35200.0,
+        "admitted": 35200.0,
+        "delivered": 35200.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 0.0,
+        "energy_j": 1367645.8745596218,
+        "wasted_energy_j": 0.0,
+        "effective_per_offered_j": 38.85357598180744,
+        "wasted_per_offered_j": 0.0,
+        "energy_per_offered_j": 38.85357598180744,
+        "delivery_pct": 100.0,
+        "delivery_min_pct": 100.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "164": 27500.0,
+          "502": 7700.0
+        }
+      },
+      {
+        "model": "efficientnet_b4",
+        "level": "threequarter",
+        "policy": "SLICE",
+        "offered": 35200.0,
+        "admitted": 35050.0,
+        "delivered": 34804.0,
+        "not_started": 150.0,
+        "admitted_not_delivered": 246.0,
+        "energy_j": 2202938.610261222,
+        "wasted_energy_j": 15460.915538189429,
+        "effective_per_offered_j": 62.14425269099524,
+        "wasted_per_offered_j": 0.43923055506219966,
+        "energy_per_offered_j": 62.58348324605744,
+        "delivery_pct": 98.875,
+        "delivery_min_pct": 80.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 4.474209452887795,
+        "selected_layers": {
+          "502": 35050.0
+        }
+      },
+      {
+        "model": "efficientnet_b4",
+        "level": "threequarter",
+        "policy": "TOBC",
+        "offered": 35200.0,
+        "admitted": 35047.0,
+        "delivered": 34801.0,
+        "not_started": 153.0,
+        "admitted_not_delivered": 246.0,
+        "energy_j": 2203190.032877701,
+        "wasted_energy_j": 15900.892145139695,
+        "effective_per_offered_j": 62.13889604353867,
+        "wasted_per_offered_j": 0.45172989048692314,
+        "energy_per_offered_j": 62.590625934025596,
+        "delivery_pct": 98.86647727272727,
+        "delivery_min_pct": 80.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 4.477429263282703,
+        "selected_layers": {
+          "502": 35047.0
+        }
+      },
+      {
+        "model": "efficientnet_b4",
+        "level": "threequarter",
+        "policy": "TOGC",
+        "offered": 35200.0,
+        "admitted": 35200.0,
+        "delivered": 3300.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 31900.0,
+        "energy_j": 428999.99999998976,
+        "wasted_energy_j": 83523.56812799991,
+        "effective_per_offered_j": 9.814671359999712,
+        "wasted_per_offered_j": 2.3728286399999976,
+        "energy_per_offered_j": 12.187499999999709,
+        "delivery_pct": 9.375,
+        "delivery_min_pct": 9.375,
+        "delivery_max_pct": 9.375,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 35200.0
+        }
+      },
+      {
+        "model": "efficientnet_b4",
+        "level": "threequarter",
+        "policy": "RAND",
+        "offered": 35200.0,
+        "admitted": 35200.0,
+        "delivered": 9108.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 26092.0,
+        "energy_j": 1086784.9235393954,
+        "wasted_energy_j": 527390.3598512305,
+        "effective_per_offered_j": 15.891891013868321,
+        "wasted_per_offered_j": 14.982680677591777,
+        "energy_per_offered_j": 30.874571691460098,
+        "delivery_pct": 25.875,
+        "delivery_min_pct": 25.875,
+        "delivery_max_pct": 25.875,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 7524.0,
+          "102": 6732.0,
+          "164": 7392.0,
+          "40": 6776.0,
+          "502": 6776.0
+        }
+      },
+      {
+        "model": "efficientnet_b4",
+        "level": "half",
+        "policy": "STLT",
+        "offered": 23100.0,
+        "admitted": 23100.0,
+        "delivered": 23100.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 0.0,
+        "energy_j": 742300.1311859817,
+        "wasted_energy_j": 0.0,
+        "effective_per_offered_j": 32.13420481324596,
+        "wasted_per_offered_j": 0.0,
+        "energy_per_offered_j": 32.13420481324596,
+        "delivery_pct": 100.0,
+        "delivery_min_pct": 100.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "164": 23100.0
+        }
+      },
+      {
+        "model": "efficientnet_b4",
+        "level": "half",
+        "policy": "SLICE",
+        "offered": 23100.0,
+        "admitted": 23100.0,
+        "delivered": 23100.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 0.0,
+        "energy_j": 742300.1311860003,
+        "wasted_energy_j": 0.0,
+        "effective_per_offered_j": 32.13420481324677,
+        "wasted_per_offered_j": 0.0,
+        "energy_per_offered_j": 32.13420481324677,
+        "delivery_pct": 100.0,
+        "delivery_min_pct": 100.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "164": 23100.0
+        }
+      },
+      {
+        "model": "efficientnet_b4",
+        "level": "half",
+        "policy": "TOBC",
+        "offered": 23100.0,
+        "admitted": 23100.0,
+        "delivered": 23100.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 0.0,
+        "energy_j": 1451865.7265860818,
+        "wasted_energy_j": 0.0,
+        "effective_per_offered_j": 62.851330155241634,
+        "wasted_per_offered_j": 0.0,
+        "energy_per_offered_j": 62.851330155241634,
+        "delivery_pct": 100.0,
+        "delivery_min_pct": 100.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "502": 23100.0
+        }
+      },
+      {
+        "model": "efficientnet_b4",
+        "level": "half",
+        "policy": "TOGC",
+        "offered": 23100.0,
+        "admitted": 23100.0,
+        "delivered": 3300.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 19800.0,
+        "energy_j": 428999.99999998976,
+        "wasted_energy_j": 83523.56812799991,
+        "effective_per_offered_j": 14.955689691428132,
+        "wasted_per_offered_j": 3.6157388799999963,
+        "energy_per_offered_j": 18.57142857142813,
+        "delivery_pct": 14.285714285714286,
+        "delivery_min_pct": 14.285714285714286,
+        "delivery_max_pct": 14.285714285714286,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 23100.0
+        }
+      },
+      {
+        "model": "efficientnet_b4",
+        "level": "half",
+        "policy": "RAND",
+        "offered": 23100.0,
+        "admitted": 23100.0,
+        "delivered": 9460.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 13640.0,
+        "energy_j": 855215.9402390843,
+        "wasted_energy_j": 271227.582254744,
+        "effective_per_offered_j": 25.280881298023388,
+        "wasted_per_offered_j": 11.741453777261645,
+        "energy_per_offered_j": 37.022335075285035,
+        "delivery_pct": 40.95238095238095,
+        "delivery_min_pct": 40.95238095238095,
+        "delivery_max_pct": 40.95238095238095,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 5324.0,
+          "102": 4136.0,
+          "164": 4928.0,
+          "40": 4312.0,
+          "502": 4400.0
+        }
+      },
+      {
+        "model": "resnet50",
+        "level": "nominal",
+        "policy": "STLT",
+        "offered": 16500.0,
+        "admitted": 15737.0,
+        "delivered": 15328.0,
+        "not_started": 763.0,
+        "admitted_not_delivered": 409.0,
+        "energy_j": 2469458.8566753147,
+        "wasted_energy_j": 55474.35262105498,
+        "effective_per_offered_j": 146.3020911548036,
+        "wasted_per_offered_j": 3.362081977033635,
+        "energy_per_offered_j": 149.66417313183726,
+        "delivery_pct": 92.89696969696969,
+        "delivery_min_pct": 62.666666666666664,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 8.203616959101636,
+        "selected_layers": {
+          "0": 3294.0,
+          "175": 12443.0
+        }
+      },
+      {
+        "model": "resnet50",
+        "level": "nominal",
+        "policy": "SLICE",
+        "offered": 16500.0,
+        "admitted": 15122.0,
+        "delivered": 14219.0,
+        "not_started": 1378.0,
+        "admitted_not_delivered": 903.0,
+        "energy_j": 2591706.5231659245,
+        "wasted_energy_j": 154760.23566487685,
+        "effective_per_offered_j": 147.6937143940029,
+        "wasted_per_offered_j": 9.379408222113748,
+        "energy_per_offered_j": 157.07312261611665,
+        "delivery_pct": 86.17575757575757,
+        "delivery_min_pct": 60.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 9.75943094245074,
+        "selected_layers": {
+          "175": 15122.0
+        }
+      },
+      {
+        "model": "resnet50",
+        "level": "nominal",
+        "policy": "TOBC",
+        "offered": 16500.0,
+        "admitted": 15023.0,
+        "delivered": 13874.0,
+        "not_started": 1477.0,
+        "admitted_not_delivered": 1149.0,
+        "energy_j": 2605053.6273900038,
+        "wasted_energy_j": 227235.72227786537,
+        "effective_per_offered_j": 144.11017606740234,
+        "wasted_per_offered_j": 13.771861956234265,
+        "energy_per_offered_j": 157.8820380236366,
+        "delivery_pct": 84.08484848484848,
+        "delivery_min_pct": 60.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 9.482653806497098,
+        "selected_layers": {
+          "175": 15023.0
+        }
+      },
+      {
+        "model": "resnet50",
+        "level": "nominal",
+        "policy": "TOGC",
+        "offered": 16500.0,
+        "admitted": 16500.0,
+        "delivered": 3300.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 13200.0,
+        "energy_j": 428999.99999998976,
+        "wasted_energy_j": 83523.56812799991,
+        "effective_per_offered_j": 20.937965567999385,
+        "wasted_per_offered_j": 5.062034431999995,
+        "energy_per_offered_j": 25.99999999999938,
+        "delivery_pct": 20.0,
+        "delivery_min_pct": 20.0,
+        "delivery_max_pct": 20.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 16500.0
+        }
+      },
+      {
+        "model": "resnet50",
+        "level": "nominal",
+        "policy": "RAND",
+        "offered": 16500.0,
+        "admitted": 16499.0,
+        "delivered": 7381.0,
+        "not_started": 1.0,
+        "admitted_not_delivered": 9118.0,
+        "energy_j": 1808323.942832172,
+        "wasted_energy_j": 763151.9454637648,
+        "effective_per_offered_j": 63.343757416267096,
+        "wasted_per_offered_j": 46.251633058409986,
+        "energy_per_offered_j": 109.59539047467709,
+        "delivery_pct": 44.733333333333334,
+        "delivery_min_pct": 36.53333333333333,
+        "delivery_max_pct": 44.8,
+        "delivery_std_pct": 0.7032864794279203,
+        "selected_layers": {
+          "0": 8448.0,
+          "175": 8051.0
+        }
+      },
+      {
+        "model": "resnet50",
+        "level": "threequarter",
+        "policy": "STLT",
+        "offered": 12100.0,
+        "admitted": 12094.0,
+        "delivered": 12078.0,
+        "not_started": 6.0,
+        "admitted_not_delivered": 16.0,
+        "energy_j": 1852229.254686317,
+        "wasted_energy_j": 1987.6269628995133,
+        "effective_per_offered_j": 152.91253121681137,
+        "wasted_per_offered_j": 0.1642666911487201,
+        "energy_per_offered_j": 153.07679790796007,
+        "delivery_pct": 99.81818181818181,
+        "delivery_min_pct": 80.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 1.8214996709745597,
+        "selected_layers": {
+          "0": 3300.0,
+          "175": 8794.0
+        }
+      },
+      {
+        "model": "resnet50",
+        "level": "threequarter",
+        "policy": "SLICE",
+        "offered": 12100.0,
+        "admitted": 12072.0,
+        "delivered": 12033.0,
+        "not_started": 28.0,
+        "admitted_not_delivered": 39.0,
+        "energy_j": 2068979.1426448682,
+        "wasted_energy_j": 6683.9968891807275,
+        "effective_per_offered_j": 170.43761535170972,
+        "wasted_per_offered_j": 0.5523964371223742,
+        "energy_per_offered_j": 170.99001178883208,
+        "delivery_pct": 99.44628099173553,
+        "delivery_min_pct": 80.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 3.0950219371854826,
+        "selected_layers": {
+          "175": 12072.0
+        }
+      },
+      {
+        "model": "resnet50",
+        "level": "threequarter",
+        "policy": "TOBC",
+        "offered": 12100.0,
+        "admitted": 12071.0,
+        "delivered": 12032.0,
+        "not_started": 29.0,
+        "admitted_not_delivered": 39.0,
+        "energy_j": 2069541.2455511326,
+        "wasted_energy_j": 7417.486411067028,
+        "effective_per_offered_j": 170.42345116860048,
+        "wasted_per_offered_j": 0.613015405873308,
+        "energy_per_offered_j": 171.03646657447376,
+        "delivery_pct": 99.43801652892562,
+        "delivery_min_pct": 80.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 3.1202471068976605,
+        "selected_layers": {
+          "175": 12071.0
+        }
+      },
+      {
+        "model": "resnet50",
+        "level": "threequarter",
+        "policy": "TOGC",
+        "offered": 12100.0,
+        "admitted": 12100.0,
+        "delivered": 3300.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 8800.0,
+        "energy_j": 428999.99999998976,
+        "wasted_energy_j": 83523.56812799991,
+        "effective_per_offered_j": 28.551771229090072,
+        "wasted_per_offered_j": 6.902774225454539,
+        "energy_per_offered_j": 35.45454545454461,
+        "delivery_pct": 27.272727272727273,
+        "delivery_min_pct": 27.272727272727273,
+        "delivery_max_pct": 27.272727272727273,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 12100.0
+        }
+      },
+      {
+        "model": "resnet50",
+        "level": "threequarter",
+        "policy": "RAND",
+        "offered": 12100.0,
+        "admitted": 12100.0,
+        "delivered": 6820.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 5280.0,
+        "energy_j": 1401778.6241792156,
+        "wasted_energy_j": 453021.3053247601,
+        "effective_per_offered_j": 78.4096957730955,
+        "wasted_per_offered_j": 37.43977729956695,
+        "energy_per_offered_j": 115.84947307266245,
+        "delivery_pct": 56.36363636363637,
+        "delivery_min_pct": 56.36363636363637,
+        "delivery_max_pct": 56.36363636363637,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 6424.0,
+          "175": 5676.0
+        }
+      },
+      {
+        "model": "resnet50",
+        "level": "half",
+        "policy": "STLT",
+        "offered": 7700.0,
+        "admitted": 7700.0,
+        "delivered": 7700.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 0.0,
+        "energy_j": 1099577.5406000745,
+        "wasted_energy_j": 0.0,
+        "effective_per_offered_j": 142.80227800000966,
+        "wasted_per_offered_j": 0.0,
+        "energy_per_offered_j": 142.80227800000966,
+        "delivery_pct": 100.0,
+        "delivery_min_pct": 100.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 3300.0,
+          "175": 4400.0
+        }
+      },
+      {
+        "model": "resnet50",
+        "level": "half",
+        "policy": "SLICE",
+        "offered": 7700.0,
+        "admitted": 7700.0,
+        "delivered": 7700.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 0.0,
+        "energy_j": 1319676.9402741457,
+        "wasted_energy_j": 0.0,
+        "effective_per_offered_j": 171.38661562001892,
+        "wasted_per_offered_j": 0.0,
+        "energy_per_offered_j": 171.38661562001892,
+        "delivery_pct": 100.0,
+        "delivery_min_pct": 100.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "175": 7700.0
+        }
+      },
+      {
+        "model": "resnet50",
+        "level": "half",
+        "policy": "TOBC",
+        "offered": 7700.0,
+        "admitted": 7700.0,
+        "delivered": 7700.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 0.0,
+        "energy_j": 1319676.9402741445,
+        "wasted_energy_j": 0.0,
+        "effective_per_offered_j": 171.38661562001877,
+        "wasted_per_offered_j": 0.0,
+        "energy_per_offered_j": 171.38661562001877,
+        "delivery_pct": 100.0,
+        "delivery_min_pct": 100.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "175": 7700.0
+        }
+      },
+      {
+        "model": "resnet50",
+        "level": "half",
+        "policy": "TOGC",
+        "offered": 7700.0,
+        "admitted": 7700.0,
+        "delivered": 3300.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 4400.0,
+        "energy_j": 428999.99999998976,
+        "wasted_energy_j": 83523.56812799991,
+        "effective_per_offered_j": 44.867069074284395,
+        "wasted_per_offered_j": 10.847216639999989,
+        "energy_per_offered_j": 55.71428571428439,
+        "delivery_pct": 42.857142857142854,
+        "delivery_min_pct": 42.857142857142854,
+        "delivery_max_pct": 42.857142857142854,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 7700.0
+        }
+      },
+      {
+        "model": "resnet50",
+        "level": "half",
+        "policy": "RAND",
+        "offered": 7700.0,
+        "admitted": 7700.0,
+        "delivered": 6204.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 1496.0,
+        "energy_j": 987577.7568958991,
+        "wasted_energy_j": 129721.29995176899,
+        "effective_per_offered_j": 111.40992947326366,
+        "wasted_per_offered_j": 16.84692207165831,
+        "energy_per_offered_j": 128.25685154492197,
+        "delivery_pct": 80.57142857142857,
+        "delivery_min_pct": 80.57142857142857,
+        "delivery_max_pct": 80.57142857142857,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 4092.0,
+          "175": 3608.0
+        }
+      },
+      {
+        "model": "densenet169",
+        "level": "nominal",
+        "policy": "STLT",
+        "offered": 19800.0,
+        "admitted": 18784.0,
+        "delivered": 18346.0,
+        "not_started": 1016.0,
+        "admitted_not_delivered": 438.0,
+        "energy_j": 2476167.9065903565,
+        "wasted_energy_j": 48413.64475725319,
+        "effective_per_offered_j": 122.6138516077325,
+        "wasted_per_offered_j": 2.445133573598646,
+        "energy_per_offered_j": 125.05898518133114,
+        "delivery_pct": 92.65656565656566,
+        "delivery_min_pct": 63.333333333333336,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 8.1602632886429,
+        "selected_layers": {
+          "0": 3294.0,
+          "140": 2181.0,
+          "599": 13309.0
+        }
+      },
+      {
+        "model": "densenet169",
+        "level": "nominal",
+        "policy": "SLICE",
+        "offered": 19800.0,
+        "admitted": 18337.0,
+        "delivered": 17201.0,
+        "not_started": 1463.0,
+        "admitted_not_delivered": 1136.0,
+        "energy_j": 2582204.8639107132,
+        "wasted_energy_j": 159968.59254532823,
+        "effective_per_offered_j": 122.335165220474,
+        "wasted_per_offered_j": 8.079221845723648,
+        "energy_per_offered_j": 130.41438706619763,
+        "delivery_pct": 86.87373737373737,
+        "delivery_min_pct": 60.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 9.882721467888642,
+        "selected_layers": {
+          "599": 18337.0
+        }
+      },
+      {
+        "model": "densenet169",
+        "level": "nominal",
+        "policy": "TOBC",
+        "offered": 19800.0,
+        "admitted": 18227.0,
+        "delivered": 16914.0,
+        "not_started": 1573.0,
+        "admitted_not_delivered": 1313.0,
+        "energy_j": 2591525.699461208,
+        "wasted_energy_j": 209704.6254612044,
+        "effective_per_offered_j": 120.29399363636382,
+        "wasted_per_offered_j": 10.591142700060828,
+        "energy_per_offered_j": 130.88513633642467,
+        "delivery_pct": 85.42424242424242,
+        "delivery_min_pct": 60.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 9.875750817651364,
+        "selected_layers": {
+          "599": 18227.0
+        }
+      },
+      {
+        "model": "densenet169",
+        "level": "nominal",
+        "policy": "TOGC",
+        "offered": 19800.0,
+        "admitted": 19800.0,
+        "delivered": 3300.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 16500.0,
+        "energy_j": 428999.99999998976,
+        "wasted_energy_j": 83523.56812799991,
+        "effective_per_offered_j": 17.44830463999949,
+        "wasted_per_offered_j": 4.218362026666663,
+        "energy_per_offered_j": 21.66666666666615,
+        "delivery_pct": 16.666666666666668,
+        "delivery_min_pct": 16.666666666666668,
+        "delivery_max_pct": 16.666666666666668,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 19800.0
+        }
+      },
+      {
+        "model": "densenet169",
+        "level": "nominal",
+        "policy": "RAND",
+        "offered": 19800.0,
+        "admitted": 19798.2,
+        "delivered": 8040.2,
+        "not_started": 1.8,
+        "admitted_not_delivered": 11758.0,
+        "energy_j": 1846439.508986763,
+        "wasted_energy_j": 863856.873644877,
+        "effective_per_offered_j": 49.625385623327574,
+        "wasted_per_offered_j": 43.62913503256954,
+        "energy_per_offered_j": 93.25452065589712,
+        "delivery_pct": 40.607070707070704,
+        "delivery_min_pct": 33.333333333333336,
+        "delivery_max_pct": 40.666666666666664,
+        "delivery_std_pct": 0.6280328227001328,
+        "selected_layers": {
+          "0": 7260.0,
+          "140": 6467.8,
+          "599": 6070.4
+        }
+      },
+      {
+        "model": "densenet169",
+        "level": "threequarter",
+        "policy": "STLT",
+        "offered": 15400.0,
+        "admitted": 15368.0,
+        "delivered": 15346.0,
+        "not_started": 32.0,
+        "admitted_not_delivered": 22.0,
+        "energy_j": 2002749.4153734224,
+        "wasted_energy_j": 2101.720730578116,
+        "effective_per_offered_j": 129.91218796382105,
+        "wasted_per_offered_j": 0.1364753721154621,
+        "energy_per_offered_j": 130.0486633359365,
+        "delivery_pct": 99.64935064935065,
+        "delivery_min_pct": 80.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 2.244793216553552,
+        "selected_layers": {
+          "0": 3300.0,
+          "140": 2200.0,
+          "599": 9868.0
+        }
+      },
+      {
+        "model": "densenet169",
+        "level": "threequarter",
+        "policy": "SLICE",
+        "offered": 15400.0,
+        "admitted": 15344.0,
+        "delivered": 15276.0,
+        "not_started": 56.0,
+        "admitted_not_delivered": 68.0,
+        "energy_j": 2160734.312826056,
+        "wasted_energy_j": 9575.584765037253,
+        "effective_per_offered_j": 139.68563169227397,
+        "wasted_per_offered_j": 0.6217912185089125,
+        "energy_per_offered_j": 140.30742291078286,
+        "delivery_pct": 99.1948051948052,
+        "delivery_min_pct": 80.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 3.686166190064709,
+        "selected_layers": {
+          "599": 15344.0
+        }
+      },
+      {
+        "model": "densenet169",
+        "level": "threequarter",
+        "policy": "TOBC",
+        "offered": 15400.0,
+        "admitted": 15343.0,
+        "delivered": 15242.0,
+        "not_started": 57.0,
+        "admitted_not_delivered": 101.0,
+        "energy_j": 2161435.397844476,
+        "wasted_energy_j": 15064.532885978986,
+        "effective_per_offered_j": 139.3747314908115,
+        "wasted_per_offered_j": 0.9782164211674667,
+        "energy_per_offered_j": 140.35294791197896,
+        "delivery_pct": 98.97402597402598,
+        "delivery_min_pct": 80.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 4.283025110564816,
+        "selected_layers": {
+          "599": 15343.0
+        }
+      },
+      {
+        "model": "densenet169",
+        "level": "threequarter",
+        "policy": "TOGC",
+        "offered": 15400.0,
+        "admitted": 15400.0,
+        "delivered": 3300.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 12100.0,
+        "energy_j": 428999.99999998976,
+        "wasted_energy_j": 83523.56812799991,
+        "effective_per_offered_j": 22.433534537142197,
+        "wasted_per_offered_j": 5.423608319999994,
+        "energy_per_offered_j": 27.857142857142193,
+        "delivery_pct": 21.428571428571427,
+        "delivery_min_pct": 21.428571428571427,
+        "delivery_max_pct": 21.428571428571427,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 15400.0
+        }
+      },
+      {
+        "model": "densenet169",
+        "level": "threequarter",
+        "policy": "RAND",
+        "offered": 15400.0,
+        "admitted": 15400.0,
+        "delivered": 7964.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 7436.0,
+        "energy_j": 1535899.9916099554,
+        "wasted_energy_j": 568090.9909035137,
+        "effective_per_offered_j": 62.8447403056131,
+        "wasted_per_offered_j": 36.88902538334505,
+        "energy_per_offered_j": 99.73376568895814,
+        "delivery_pct": 51.714285714285715,
+        "delivery_min_pct": 51.714285714285715,
+        "delivery_max_pct": 51.714285714285715,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 5676.0,
+          "140": 4884.0,
+          "599": 4840.0
+        }
+      },
+      {
+        "model": "densenet169",
+        "level": "half",
+        "policy": "STLT",
+        "offered": 9900.0,
+        "admitted": 9900.0,
+        "delivered": 9900.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 0.0,
+        "energy_j": 1233451.0306975106,
+        "wasted_energy_j": 0.0,
+        "effective_per_offered_j": 124.59101320176875,
+        "wasted_per_offered_j": 0.0,
+        "energy_per_offered_j": 124.59101320176875,
+        "delivery_pct": 100.0,
+        "delivery_min_pct": 100.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 3300.0,
+          "140": 2200.0,
+          "599": 4400.0
+        }
+      },
+      {
+        "model": "densenet169",
+        "level": "half",
+        "policy": "SLICE",
+        "offered": 9900.0,
+        "admitted": 9900.0,
+        "delivered": 9900.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 0.0,
+        "energy_j": 1394113.0798510124,
+        "wasted_energy_j": 0.0,
+        "effective_per_offered_j": 140.8195030152538,
+        "wasted_per_offered_j": 0.0,
+        "energy_per_offered_j": 140.8195030152538,
+        "delivery_pct": 100.0,
+        "delivery_min_pct": 100.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "599": 9900.0
+        }
+      },
+      {
+        "model": "densenet169",
+        "level": "half",
+        "policy": "TOBC",
+        "offered": 9900.0,
+        "admitted": 9900.0,
+        "delivered": 9900.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 0.0,
+        "energy_j": 1394113.0798510108,
+        "wasted_energy_j": 0.0,
+        "effective_per_offered_j": 140.81950301525362,
+        "wasted_per_offered_j": 0.0,
+        "energy_per_offered_j": 140.81950301525362,
+        "delivery_pct": 100.0,
+        "delivery_min_pct": 100.0,
+        "delivery_max_pct": 100.0,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "599": 9900.0
+        }
+      },
+      {
+        "model": "densenet169",
+        "level": "half",
+        "policy": "TOGC",
+        "offered": 9900.0,
+        "admitted": 9900.0,
+        "delivered": 3300.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 6600.0,
+        "energy_j": 428999.99999998976,
+        "wasted_energy_j": 83523.56812799991,
+        "effective_per_offered_j": 34.89660927999898,
+        "wasted_per_offered_j": 8.436724053333325,
+        "energy_per_offered_j": 43.3333333333323,
+        "delivery_pct": 33.333333333333336,
+        "delivery_min_pct": 33.333333333333336,
+        "delivery_max_pct": 33.333333333333336,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 9900.0
+        }
+      },
+      {
+        "model": "densenet169",
+        "level": "half",
+        "policy": "RAND",
+        "offered": 9900.0,
+        "admitted": 9900.0,
+        "delivered": 8184.0,
+        "not_started": 0.0,
+        "admitted_not_delivered": 1716.0,
+        "energy_j": 1103222.7585297977,
+        "wasted_energy_j": 100696.00986425366,
+        "effective_per_offered_j": 101.26532814803474,
+        "wasted_per_offered_j": 10.17131412770239,
+        "energy_per_offered_j": 111.43664227573714,
+        "delivery_pct": 82.66666666666667,
+        "delivery_min_pct": 82.66666666666667,
+        "delivery_max_pct": 82.66666666666667,
+        "delivery_std_pct": 0.0,
+        "selected_layers": {
+          "0": 3784.0,
+          "140": 3212.0,
+          "599": 2904.0
+        }
+      }
+    ],
+    "figure_caption": "Simulated EO energy per offered task and delivery rate across 220 five-orbit segments. Energy bars separate effective and wasted EO energy. Delivery bars show means and whiskers show plus or minus one sample standard deviation across segments. RAND is averaged over five seeds within each segment before these statistics are calculated."
+  },
+  "figure8": [
+    {
+      "model": "squeezenet1_1",
+      "axis": "rho",
+      "value": 0.008,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 398.9909090909091,
+          "delivery_pct": 48.65742793791574
+        },
+        {
+          "policy": "SLICE",
+          "status": "NF",
+          "mean_delivered": null,
+          "delivery_pct": null
+        }
+      ]
+    },
+    {
+      "model": "squeezenet1_1",
+      "axis": "rho",
+      "value": 0.012,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 578.8681818181818,
+          "delivery_pct": 70.59368070953437
+        },
+        {
+          "policy": "SLICE",
+          "status": "NF",
+          "mean_delivered": null,
+          "delivery_pct": null
+        }
+      ]
+    },
+    {
+      "model": "squeezenet1_1",
+      "axis": "rho",
+      "value": 0.016,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 741.0863636363637,
+          "delivery_pct": 90.37638580931264
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 672.7227272727273,
+          "delivery_pct": 82.03935698447894
+        }
+      ]
+    },
+    {
+      "model": "squeezenet1_1",
+      "axis": "rho",
+      "value": 0.02,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 813.7181818181818,
+          "delivery_pct": 99.23392461197339
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 799.3045454545454,
+          "delivery_pct": 97.47616407982261
+        }
+      ]
+    },
+    {
+      "model": "squeezenet1_1",
+      "axis": "rho",
+      "value": 0.024,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 818.65,
+          "delivery_pct": 99.83536585365853
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 817.6909090909091,
+          "delivery_pct": 99.71840354767184
+        }
+      ]
+    },
+    {
+      "model": "squeezenet1_1",
+      "axis": "rho",
+      "value": 0.032,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 820.0,
+          "delivery_pct": 100.0
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 820.0,
+          "delivery_pct": 100.0
+        }
+      ]
+    },
+    {
+      "model": "squeezenet1_1",
+      "axis": "rate",
+      "value": 5.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 671.9272727272727,
+          "delivery_pct": 81.94235033259423
+        },
+        {
+          "policy": "SLICE",
+          "status": "NF",
+          "mean_delivered": null,
+          "delivery_pct": null
+        }
+      ]
+    },
+    {
+      "model": "squeezenet1_1",
+      "axis": "rate",
+      "value": 10.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 673.290909090909,
+          "delivery_pct": 82.10864745011087
+        },
+        {
+          "policy": "SLICE",
+          "status": "NF",
+          "mean_delivered": null,
+          "delivery_pct": null
+        }
+      ]
+    },
+    {
+      "model": "squeezenet1_1",
+      "axis": "rate",
+      "value": 20.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 741.0863636363637,
+          "delivery_pct": 90.37638580931264
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 672.7227272727273,
+          "delivery_pct": 82.03935698447894
+        }
+      ]
+    },
+    {
+      "model": "squeezenet1_1",
+      "axis": "rate",
+      "value": 40.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 815.6545454545454,
+          "delivery_pct": 99.470066518847
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 672.7272727272727,
+          "delivery_pct": 82.039911308204
+        }
+      ]
+    },
+    {
+      "model": "squeezenet1_1",
+      "axis": "rate",
+      "value": 80.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 816.0954545454546,
+          "delivery_pct": 99.52383592017739
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 672.7318181818182,
+          "delivery_pct": 82.04046563192905
+        }
+      ]
+    },
+    {
+      "model": "swin_v2_t",
+      "axis": "rho",
+      "value": 0.008,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 37.60909090909091,
+          "delivery_pct": 57.86013986013986
+        },
+        {
+          "policy": "SLICE",
+          "status": "NF",
+          "mean_delivered": null,
+          "delivery_pct": null
+        }
+      ]
+    },
+    {
+      "model": "swin_v2_t",
+      "axis": "rho",
+      "value": 0.012,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 53.13181818181818,
+          "delivery_pct": 81.74125874125875
+        },
+        {
+          "policy": "SLICE",
+          "status": "NF",
+          "mean_delivered": null,
+          "delivery_pct": null
+        }
+      ]
+    },
+    {
+      "model": "swin_v2_t",
+      "axis": "rho",
+      "value": 0.016,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 63.722727272727276,
+          "delivery_pct": 98.03496503496504
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 57.63181818181818,
+          "delivery_pct": 88.66433566433567
+        }
+      ]
+    },
+    {
+      "model": "swin_v2_t",
+      "axis": "rho",
+      "value": 0.02,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 64.87272727272727,
+          "delivery_pct": 99.8041958041958
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 64.3409090909091,
+          "delivery_pct": 98.98601398601399
+        }
+      ]
+    },
+    {
+      "model": "swin_v2_t",
+      "axis": "rho",
+      "value": 0.024,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 65.0,
+          "delivery_pct": 100.0
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 64.88181818181818,
+          "delivery_pct": 99.81818181818181
+        }
+      ]
+    },
+    {
+      "model": "swin_v2_t",
+      "axis": "rho",
+      "value": 0.032,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 65.0,
+          "delivery_pct": 100.0
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 65.0,
+          "delivery_pct": 100.0
+        }
+      ]
+    },
+    {
+      "model": "swin_v2_t",
+      "axis": "rate",
+      "value": 5.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 57.63181818181818,
+          "delivery_pct": 88.66433566433567
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 57.63181818181818,
+          "delivery_pct": 88.66433566433567
+        }
+      ]
+    },
+    {
+      "model": "swin_v2_t",
+      "axis": "rate",
+      "value": 10.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 59.39090909090909,
+          "delivery_pct": 91.37062937062937
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 57.63181818181818,
+          "delivery_pct": 88.66433566433567
+        }
+      ]
+    },
+    {
+      "model": "swin_v2_t",
+      "axis": "rate",
+      "value": 20.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 63.722727272727276,
+          "delivery_pct": 98.03496503496504
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 57.63181818181818,
+          "delivery_pct": 88.66433566433567
+        }
+      ]
+    },
+    {
+      "model": "swin_v2_t",
+      "axis": "rate",
+      "value": 40.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 64.99545454545455,
+          "delivery_pct": 99.99300699300699
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 57.63181818181818,
+          "delivery_pct": 88.66433566433567
+        }
+      ]
+    },
+    {
+      "model": "swin_v2_t",
+      "axis": "rate",
+      "value": 80.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 65.0,
+          "delivery_pct": 100.0
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 65.0,
+          "delivery_pct": 100.0
+        }
+      ]
+    },
+    {
+      "model": "efficientnet_b4",
+      "axis": "rho",
+      "value": 0.008,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 141.8,
+          "delivery_pct": 67.52380952380952
+        },
+        {
+          "policy": "SLICE",
+          "status": "NF",
+          "mean_delivered": null,
+          "delivery_pct": null
+        }
+      ]
+    },
+    {
+      "model": "efficientnet_b4",
+      "axis": "rho",
+      "value": 0.012,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 194.00454545454545,
+          "delivery_pct": 92.38311688311688
+        },
+        {
+          "policy": "SLICE",
+          "status": "NF",
+          "mean_delivered": null,
+          "delivery_pct": null
+        }
+      ]
+    },
+    {
+      "model": "efficientnet_b4",
+      "axis": "rho",
+      "value": 0.016,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 209.3,
+          "delivery_pct": 99.66666666666667
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 174.21818181818182,
+          "delivery_pct": 82.96103896103897
+        }
+      ]
+    },
+    {
+      "model": "efficientnet_b4",
+      "axis": "rho",
+      "value": 0.02,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 209.9909090909091,
+          "delivery_pct": 99.99567099567099
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 205.53181818181818,
+          "delivery_pct": 97.87229437229438
+        }
+      ]
+    },
+    {
+      "model": "efficientnet_b4",
+      "axis": "rho",
+      "value": 0.024,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 210.0,
+          "delivery_pct": 100.0
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 209.6,
+          "delivery_pct": 99.80952380952381
+        }
+      ]
+    },
+    {
+      "model": "efficientnet_b4",
+      "axis": "rho",
+      "value": 0.032,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 210.0,
+          "delivery_pct": 100.0
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 210.0,
+          "delivery_pct": 100.0
+        }
+      ]
+    },
+    {
+      "model": "efficientnet_b4",
+      "axis": "rate",
+      "value": 5.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 174.28181818181818,
+          "delivery_pct": 82.991341991342
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 174.28181818181818,
+          "delivery_pct": 82.991341991342
+        }
+      ]
+    },
+    {
+      "model": "efficientnet_b4",
+      "axis": "rate",
+      "value": 10.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 191.96363636363637,
+          "delivery_pct": 91.41125541125541
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 174.21818181818182,
+          "delivery_pct": 82.96103896103897
+        }
+      ]
+    },
+    {
+      "model": "efficientnet_b4",
+      "axis": "rate",
+      "value": 20.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 209.3,
+          "delivery_pct": 99.66666666666667
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 174.21818181818182,
+          "delivery_pct": 82.96103896103897
+        }
+      ]
+    },
+    {
+      "model": "efficientnet_b4",
+      "axis": "rate",
+      "value": 40.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 210.0,
+          "delivery_pct": 100.0
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 208.92727272727274,
+          "delivery_pct": 99.4891774891775
+        }
+      ]
+    },
+    {
+      "model": "efficientnet_b4",
+      "axis": "rate",
+      "value": 80.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 210.0,
+          "delivery_pct": 100.0
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 210.0,
+          "delivery_pct": 100.0
+        }
+      ]
+    },
+    {
+      "model": "resnet50",
+      "axis": "rho",
+      "value": 0.008,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 39.00454545454546,
+          "delivery_pct": 52.00606060606061
+        },
+        {
+          "policy": "SLICE",
+          "status": "NF",
+          "mean_delivered": null,
+          "delivery_pct": null
+        }
+      ]
+    },
+    {
+      "model": "resnet50",
+      "axis": "rho",
+      "value": 0.012,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 55.945454545454545,
+          "delivery_pct": 74.5939393939394
+        },
+        {
+          "policy": "SLICE",
+          "status": "NF",
+          "mean_delivered": null,
+          "delivery_pct": null
+        }
+      ]
+    },
+    {
+      "model": "resnet50",
+      "axis": "rho",
+      "value": 0.016,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 69.67272727272727,
+          "delivery_pct": 92.89696969696969
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 64.63181818181818,
+          "delivery_pct": 86.17575757575757
+        }
+      ]
+    },
+    {
+      "model": "resnet50",
+      "axis": "rho",
+      "value": 0.02,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 74.64545454545454,
+          "delivery_pct": 99.52727272727273
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 73.85909090909091,
+          "delivery_pct": 98.47878787878788
+        }
+      ]
+    },
+    {
+      "model": "resnet50",
+      "axis": "rho",
+      "value": 0.024,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 74.93181818181819,
+          "delivery_pct": 99.9090909090909
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 74.86363636363636,
+          "delivery_pct": 99.81818181818181
+        }
+      ]
+    },
+    {
+      "model": "resnet50",
+      "axis": "rho",
+      "value": 0.032,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 75.0,
+          "delivery_pct": 100.0
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 75.0,
+          "delivery_pct": 100.0
+        }
+      ]
+    },
+    {
+      "model": "resnet50",
+      "axis": "rate",
+      "value": 5.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 64.63181818181818,
+          "delivery_pct": 86.17575757575757
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 64.63181818181818,
+          "delivery_pct": 86.17575757575757
+        }
+      ]
+    },
+    {
+      "model": "resnet50",
+      "axis": "rate",
+      "value": 10.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 64.63181818181818,
+          "delivery_pct": 86.17575757575757
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 64.63181818181818,
+          "delivery_pct": 86.17575757575757
+        }
+      ]
+    },
+    {
+      "model": "resnet50",
+      "axis": "rate",
+      "value": 20.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 69.67272727272727,
+          "delivery_pct": 92.89696969696969
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 64.63181818181818,
+          "delivery_pct": 86.17575757575757
+        }
+      ]
+    },
+    {
+      "model": "resnet50",
+      "axis": "rate",
+      "value": 40.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 74.85909090909091,
+          "delivery_pct": 99.81212121212121
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 64.63181818181818,
+          "delivery_pct": 86.17575757575757
+        }
+      ]
+    },
+    {
+      "model": "resnet50",
+      "axis": "rate",
+      "value": 80.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 75.0,
+          "delivery_pct": 100.0
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 64.63181818181818,
+          "delivery_pct": 86.17575757575757
+        }
+      ]
+    },
+    {
+      "model": "densenet169",
+      "axis": "rho",
+      "value": 0.008,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 45.32272727272727,
+          "delivery_pct": 50.35858585858586
+        },
+        {
+          "policy": "SLICE",
+          "status": "NF",
+          "mean_delivered": null,
+          "delivery_pct": null
+        }
+      ]
+    },
+    {
+      "model": "densenet169",
+      "axis": "rho",
+      "value": 0.012,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 66.21363636363637,
+          "delivery_pct": 73.57070707070707
+        },
+        {
+          "policy": "SLICE",
+          "status": "NF",
+          "mean_delivered": null,
+          "delivery_pct": null
+        }
+      ]
+    },
+    {
+      "model": "densenet169",
+      "axis": "rho",
+      "value": 0.016,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 83.39090909090909,
+          "delivery_pct": 92.65656565656566
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 78.18636363636364,
+          "delivery_pct": 86.87373737373737
+        }
+      ]
+    },
+    {
+      "model": "densenet169",
+      "axis": "rho",
+      "value": 0.02,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 89.56818181818181,
+          "delivery_pct": 99.52020202020202
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 88.81363636363636,
+          "delivery_pct": 98.68181818181819
+        }
+      ]
+    },
+    {
+      "model": "densenet169",
+      "axis": "rho",
+      "value": 0.024,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 89.85454545454546,
+          "delivery_pct": 99.83838383838383
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 89.83636363636364,
+          "delivery_pct": 99.81818181818181
+        }
+      ]
+    },
+    {
+      "model": "densenet169",
+      "axis": "rho",
+      "value": 0.032,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 90.0,
+          "delivery_pct": 100.0
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 90.0,
+          "delivery_pct": 100.0
+        }
+      ]
+    },
+    {
+      "model": "densenet169",
+      "axis": "rate",
+      "value": 5.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 78.18636363636364,
+          "delivery_pct": 86.87373737373737
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 78.18636363636364,
+          "delivery_pct": 86.87373737373737
+        }
+      ]
+    },
+    {
+      "model": "densenet169",
+      "axis": "rate",
+      "value": 10.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 78.18636363636364,
+          "delivery_pct": 86.87373737373737
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 78.18636363636364,
+          "delivery_pct": 86.87373737373737
+        }
+      ]
+    },
+    {
+      "model": "densenet169",
+      "axis": "rate",
+      "value": 20.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 83.39090909090909,
+          "delivery_pct": 92.65656565656566
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 78.18636363636364,
+          "delivery_pct": 86.87373737373737
+        }
+      ]
+    },
+    {
+      "model": "densenet169",
+      "axis": "rate",
+      "value": 40.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 89.68636363636364,
+          "delivery_pct": 99.65151515151516
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 78.18636363636364,
+          "delivery_pct": 86.87373737373737
+        }
+      ]
+    },
+    {
+      "model": "densenet169",
+      "axis": "rate",
+      "value": 80.0,
+      "policies": [
+        {
+          "policy": "STLT",
+          "status": "ok",
+          "mean_delivered": 90.0,
+          "delivery_pct": 100.0
+        },
+        {
+          "policy": "SLICE",
+          "status": "ok",
+          "mean_delivered": 89.83636363636364,
+          "delivery_pct": 99.81818181818181
+        }
+      ]
+    }
+  ],
+  "inputs": {
+    "REBUTTAL/experiments/formula-arrivals-alpha6-220-20260917/results-main-220/metadata.json": "99923e2b1c9eca2d5209168b7d0c8085542bc92f6c09dbd0c3d9567ca3cbe4a7",
+    "REBUTTAL/experiments/formula-arrivals-alpha6-220-20260917/results-main-220/configuration.json": "9ff4a826d5b7c3755c018a6ae1021ee29bc2d385d20b8784c15efa18a8d938fb",
+    "REBUTTAL/experiments/formula-arrivals-alpha6-220-20260917/results-main-220/per_window.csv": "21713a46c8dc05e03753c0feded920a0c33cd7593bfa24920750369e57d326d5",
+    "REBUTTAL/experiments/formula-arrivals-alpha6-220-20260917/results-resource-220/metadata.json": "3dcf3170218f8eab8adea885cec5d83d7bc69033872746c33aa0dbe2b3cecb5c",
+    "REBUTTAL/experiments/formula-arrivals-alpha6-220-20260917/results-resource-220/configuration.json": "77c85e2f5c04fb682f551d70caf5de4c1fd386a3bdb7bef93706f37c2e362f98",
+    "REBUTTAL/experiments/formula-arrivals-alpha6-220-20260917/results-resource-220/aggregate.csv": "761edeed79c6e709565808827d1ae23569525a34f2eb56a952be9cd1d78a3175",
+    "REBUTTAL/experiments/formula-arrivals-alpha6-220-20260917/results-attempt-first-220-v2/metadata.json": "4fd90204ffebd56b3ec4a13678499bb25a9005f2f3e076b92bff4ce0a58db9be",
+    "REBUTTAL/experiments/formula-arrivals-alpha6-220-20260917/results-attempt-first-220-v2/baseline_per_window.csv": "5b019193750576f864d24db759bea3c71301baf9a248f2e2cffe99d66c8ff79c"
+  },
+  "outputs": {
+    "paper-source-latest/figures/revision/latest/energy_and_delivery_formula_arrivals_220_attempt_first_sd.pdf": "93c05eaba1381639f247af9bb7901e00625488ce653591550b2fe0ec9f1f149b",
+    "paper-source-latest/figures/revision/latest/sensitivity_facets_formula_arrivals_220.pdf": "5507eaa1813f0dfe021ae4eee79790b304a2934c666c536d902487fccfaa6d2f"
+  }
+}
