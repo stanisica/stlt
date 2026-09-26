@@ -1,0 +1,149 @@
+{
+  "implementation_commit": "48ba0a85bb3b9d14844eb1f81352235af7f80381",
+  "date": "2026-09-26",
+  "unit_tests_passed": 27,
+  "runs": {
+    "macos_full": {
+      "mode": "full",
+      "segments": 220,
+      "python": "3.12.9 | packaged by Anaconda, Inc. | (main, Feb  6 2025, 12:55:12) [Clang 14.0.6 ]",
+      "platform": "macOS-26.6.2-arm64-arm-64bit",
+      "elapsed_s": 618.4288727499988,
+      "peak_memory_bytes": 179503104,
+      "telemetry_sha256": "5d761d0bb65730cdbdb364f9c8706e9469bbbc6049cc0ed0b22d95ead8d656fa",
+      "validation_passed": 150,
+      "validation_failed": 0,
+      "suites": {
+        "main": {
+          "rows": 29700,
+          "infeasible_rows": 0
+        },
+        "resource": {
+          "rows": 24200,
+          "infeasible_rows": 2640
+        }
+      },
+      "output_bytes": 13654404
+    },
+    "linux_full": {
+      "mode": "full",
+      "segments": 220,
+      "python": "3.12.9 (main, Apr  8 2025, 09:22:41) [GCC 12.2.0]",
+      "platform": "Linux-6.10.14-linuxkit-aarch64-with-glibc2.36",
+      "elapsed_s": 602.8459017329999,
+      "peak_memory_bytes": 138231808,
+      "telemetry_sha256": "5d761d0bb65730cdbdb364f9c8706e9469bbbc6049cc0ed0b22d95ead8d656fa",
+      "validation_passed": 150,
+      "validation_failed": 0,
+      "suites": {
+        "main": {
+          "rows": 29700,
+          "infeasible_rows": 0
+        },
+        "resource": {
+          "rows": 24200,
+          "infeasible_rows": 2640
+        }
+      },
+      "output_bytes": 13654363
+    },
+    "source_archive_smoke": {
+      "mode": "smoke",
+      "segments": 1,
+      "python": "3.12.9 | packaged by Anaconda, Inc. | (main, Feb  6 2025, 12:55:12) [Clang 14.0.6 ]",
+      "platform": "macOS-26.6.2-arm64-arm-64bit",
+      "elapsed_s": 3.6723165000003064,
+      "peak_memory_bytes": 126222336,
+      "telemetry_sha256": "5d761d0bb65730cdbdb364f9c8706e9469bbbc6049cc0ed0b22d95ead8d656fa",
+      "validation_passed": 148,
+      "validation_failed": 0,
+      "suites": {
+        "main": {
+          "rows": 135,
+          "infeasible_rows": 0
+        },
+        "resource": {
+          "rows": 110,
+          "infeasible_rows": 12
+        }
+      },
+      "output_bytes": 235019
+    }
+  },
+  "claims": {
+    "stlt_offered": {
+      "value": 277200.0,
+      "unit": "tasks"
+    },
+    "stlt_delivered": {
+      "value": 256778.0,
+      "unit": "tasks"
+    },
+    "stlt_energy_j": {
+      "value": 11837993.26680931,
+      "unit": "J"
+    },
+    "slice_offered": {
+      "value": 277200.0,
+      "unit": "tasks"
+    },
+    "slice_delivered": {
+      "value": 230426.0,
+      "unit": "tasks"
+    },
+    "slice_energy_j": {
+      "value": 12976960.527449459,
+      "unit": "J"
+    },
+    "delivery_improvement": {
+      "value": 11.43620945553019,
+      "unit": "%"
+    },
+    "energy_reduction": {
+      "value": 8.776841527959899,
+      "unit": "%"
+    },
+    "mean_candidate_reduction": {
+      "value": 30.714285714285715,
+      "unit": "%"
+    },
+    "minimum_energy_split_share": {
+      "value": 39.34334087850239,
+      "unit": "%"
+    }
+  },
+  "execution_source_sha256": {
+    "data/expected/paper-results.json": "e7a0f16b34fbd7e4193ce4b78374f7b8b62f3e9901f79b4d19d4a7d22a44ef39",
+    "data/model-profiles/densenet169.json": "e3a3380137d93fe20fa94f5cb343d08d51514f7fa1aa9c974a01bbfdb8f3e356",
+    "data/model-profiles/efficientnet_b4.json": "12f009af1d2e23e6721a31bcb411e4e4000e67b73351367b63e614500bd52b1f",
+    "data/model-profiles/resnet50.json": "044c9c1b07c18ad257d3cd52855942fd437760e0d0e35b0ddf5ecadc24e6523e",
+    "data/model-profiles/squeezenet1_1.json": "5d809443ebdc7812553bca541f751707981cfc7a0e88846da0a0b6af4730262e",
+    "data/model-profiles/swin_v2_t.json": "3f432b90b45c81b7ecf844e8639c27f16d36afd3e01b4521f99a89e67a22ad56",
+    "experiments/main.json": "9ff4a826d5b7c3755c018a6ae1021ee29bc2d385d20b8784c15efa18a8d938fb",
+    "experiments/resource.json": "77c85e2f5c04fb682f551d70caf5de4c1fd386a3bdb7bef93706f37c2e362f98",
+    "pyproject.toml": "235eed584752afa06542affcc22ae8a12a38dd1eb31e8a62f47aa4fc74bf2a9e",
+    "reproduce_paper_artifacts.sh": "9db8ba5f85ada26b50dc64854167976a4dde02db284736f6d5fa83e06666bc35",
+    "requirements.txt": "22dea1184f29db97f908445450424bad831177f065164fd19e439b67d663b8ea",
+    "scripts/check_env.sh": "2eb44f8980424002367c51dafced29b237a16e846b3b27bef73e9d332e5441bc",
+    "scripts/common.sh": "0ad8bbbf550a7190b5a75e00bce2fca08c4d2c7e52bd119270070f4f870e68f0",
+    "scripts/create_env.sh": "d50291409d40b6f92dec2d350602cf69dfcc6b7fd9d69a7a6df84a810b19ad04",
+    "scripts/download_data.sh": "75669846f058a3b747c5bf723e51294a247a9124242b9c29a80beb51dcb5b99f",
+    "scripts/package_artifact.sh": "1f69ff39d8b571555954293b5210c88972af8593fd34ecf13d73e4fcaf4d96ca",
+    "scripts/smoke_test.sh": "bf751a9830a822ff9c643310639bbd7475de180a37e6e9f0d718f6baa0789ebb",
+    "scripts/validate_results.sh": "7db313fb71e4d7f1127dd666423fd7e046126fd55987920a642e673b3a28ca7f",
+    "src/stlt_artifact/__init__.py": "4c004a2ec90560a8290af7f0d3bc4db7fa1905b22b8a3fe5421cebfc05cc5b80",
+    "src/stlt_artifact/arrivals.py": "aa8b7c4583f2da0bea0f0b1183a5713e9defa6b484bfad3c7833eeb3538f5e38",
+    "src/stlt_artifact/bundle.py": "81d4d1d8b42b616917c01c1cf15ccc11cea381c9170e976486da3a8501a13754",
+    "src/stlt_artifact/cli.py": "f382e718c81016aea0b6a314113e9722e9782af6e3e6a1aa23b15fc3e3834fed",
+    "src/stlt_artifact/energy.py": "67f28c78508d5f3c8e8fd9b691af9fd678c3d40c229725120a6796cf012d706e",
+    "src/stlt_artifact/experiments.py": "63b031fb174984e2a0397f282b2d8eab074ad0f1ae39a5b315ebe9d4525b9bd2",
+    "src/stlt_artifact/exports.py": "42042e59f0172d93c1260146f59ce9751ed72be3c815a1f03e7b1b8560c02c5f",
+    "src/stlt_artifact/figures.py": "243a2fc2d137b550a33a88326bd3c6d1a4d759d93ab5e48ad2926a6e3c00f8c0",
+    "src/stlt_artifact/planner.py": "f86785175e997e8b13e4cde22f8b3eefccb88bfbc00af0546733e2c3350bb0c2",
+    "src/stlt_artifact/policy.py": "9a2f93f0888370a3acaeb1783434baf36912168d687b8d39654baebbf2e0ba0f",
+    "src/stlt_artifact/profiles.py": "98bec999d924c19e54200874bc4fd5d4d476e5159cfc5d05081b1448b034a188",
+    "src/stlt_artifact/simulator.py": "31a72b2ad61dddc83bc6e48d8f85715d5059304631611f1b6cc7be443c576b44",
+    "src/stlt_artifact/telemetry.py": "26ced12dfaa2460c67476d3b794193491e2da0d6af858c669e105a5745595f1b",
+    "src/stlt_artifact/validation.py": "180a61a21a73af7850358e5d09192b23aba04ada842a740656629720b48705b5"
+  }
+}

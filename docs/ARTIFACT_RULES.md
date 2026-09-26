@@ -40,8 +40,8 @@ The submission deadline is 27 September, AoE. The notification date is
 - [x] Document supported results and exclusions.
 - [x] Provide environment checks and failure regression tests.
 - [x] Provide a container recipe and a source packaging command.
-- [ ] Record final clean-environment results in `VERIFICATION.md`.
-- [ ] Review the generated plots and documentation against the submitted PDF.
+- [x] Record final clean-environment results in `VERIFICATION.md`.
+- [x] Review the generated plots and documentation against the submitted PDF.
 - [ ] Select a source-code license.
 - [ ] Archive the reviewed release and record its permanent URL and checksum.
 - [ ] Name requested badges in the submission abstract and submit the package.
