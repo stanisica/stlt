@@ -2,6 +2,22 @@
 
 Date: 26 September 2026. Branch: `artifact/portable-reproduction`.
 
+## Supplemental candidate plots
+
+The candidate-analysis extension exports CSV, PDF, and PNG files for all five
+models and a combined overview. Its standalone command was tested without
+telemetry. Candidate validation passed 155 checks; the updated real-data smoke
+workflow passed 200 checks. All 30 unit and regression tests passed. Additional
+tests reject missing model plots and altered coordinates, and verify that the
+candidate-only bundle requires no replay outputs. The overview and individual
+plot layout were inspected visually.
+
+The Figure 5 coordinate CSV is byte-identical to the prior verified output.
+The full replay evidence below applies to the earlier implementation commit
+`48ba0a8`; the candidate extension was verified through its standalone and smoke
+workflows without repeating the full telemetry replay. See
+[candidate-verification.json](candidate-verification.json) for exact timings.
+
 ## Procedure
 
 The native environment was created through `scripts/create_env.sh`. The

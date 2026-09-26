@@ -7,6 +7,11 @@ satellite-ground DNN inference. The portable workflow reproduces Table 2,
 Figures 5–8, Table 4, and the numerical parameters of Table 1. It also exports
 the headline delivery, modeled energy, and candidate-selection statistics.
 
+Supplemental candidate-plane plots cover all five models. Run
+`./scripts/analyze_candidates.sh` after setup to generate them without telemetry.
+The full workflow includes the same per-model CSV, PDF, and PNG files and a
+combined overview. The paper's Figure 5 remains the representative Swin plot.
+
 The target badges are Artifacts Available, Artifacts Functional, and Results
 Reproduced. The final submission abstract must name each requested badge.
 

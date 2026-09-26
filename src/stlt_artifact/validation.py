@@ -9,6 +9,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from .arrivals import OrbitSchedule
+from .candidate_analysis import CANDIDATE_OUTPUTS, candidate_tables
 from .bundle import (
     COUNT_FIELDS,
     ENERGY_FIELDS,
@@ -315,7 +316,7 @@ def validate(
     root: Path, output_dir: Path | None = None, mode: str = "full"
 ) -> ValidationReport:
     report = ValidationReport(mode)
-    if mode not in {"inputs", *SEGMENTS}:
+    if mode not in {"inputs", "candidates", *SEGMENTS}:
         report.check(False, f"unknown validation mode: {mode}")
         return report
     try:
@@ -325,7 +326,8 @@ def validate(
     if mode == "inputs" or not report.ok:
         return report
     output = output_dir or root / "artifact-output" / mode
-    for name in (*OUTPUTS, "metadata.json"):
+    outputs = CANDIDATE_OUTPUTS if mode == "candidates" else OUTPUTS
+    for name in (*outputs, "metadata.json"):
         path = output / name
         report.check(
             path.is_file() and path.stat().st_size > 0, f"required output: {name}"
@@ -334,18 +336,8 @@ def validate(
         return report
     try:
         metadata = json.loads((output / "metadata.json").read_text())
-        result = json.loads((output / "paper-results.json").read_text())
-        count = SEGMENTS[mode]
         report.check(metadata["status"] == "complete", "run completed")
-        report.check(
-            metadata["mode"] == mode and metadata["segments"] == count,
-            "run mode and segment count",
-        )
-        report.check(result["segments"] == count, "summary segment count")
-        report.check(
-            result["archive_sha256"] == metadata["telemetry_sha256"] == BUPT1_SHA256,
-            "telemetry provenance",
-        )
+        report.check(metadata["mode"] == mode, "run mode")
         report.check(
             metadata["source_sha256"] == source_hashes(root),
             "source and input provenance",
@@ -360,8 +352,8 @@ def validate(
             and bool(metadata["dependencies"]),
             "recorded environment",
         )
-        report.check(set(metadata["outputs"]) == set(OUTPUTS), "manifest file coverage")
-        for name in OUTPUTS:
+        report.check(set(metadata["outputs"]) == set(outputs), "manifest file coverage")
+        for name in outputs:
             report.check(
                 metadata["outputs"].get(name) == digest(output / name),
                 f"output digest: {name}",
@@ -372,6 +364,30 @@ def validate(
                     content.startswith(b"%PDF-") and b"%%EOF" in content[-1024:],
                     f"PDF structure: {name}",
                 )
+            elif name.endswith(".png"):
+                content = (output / name).read_bytes()
+                report.check(
+                    content.startswith(b"\x89PNG\r\n\x1a\n")
+                    and content[12:16] == b"IHDR"
+                    and int.from_bytes(content[16:20], "big") > 0
+                    and int.from_bytes(content[20:24], "big") > 0,
+                    f"PNG structure: {name}",
+                )
+        if mode == "candidates":
+            for name, expected_rows in candidate_tables(root).items():
+                report.check(
+                    _table_matches(_csv(output / name), expected_rows),
+                    f"derived table: {name}",
+                )
+            return report
+        result = json.loads((output / "paper-results.json").read_text())
+        count = SEGMENTS[mode]
+        report.check(metadata["segments"] == count, "segment count")
+        report.check(result["segments"] == count, "summary segment count")
+        report.check(
+            result["archive_sha256"] == metadata["telemetry_sha256"] == BUPT1_SHA256,
+            "telemetry provenance",
+        )
         recomputed = {"segments": count, "archive_sha256": BUPT1_SHA256}
         for suite, key, summarize in (
             ("main", "figure7", summarize_main),

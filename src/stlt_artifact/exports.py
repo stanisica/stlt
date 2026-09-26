@@ -8,16 +8,16 @@ from pathlib import Path
 from statistics import mean
 
 from .arrivals import OrbitSchedule
+from .candidate_analysis import MODELS, candidate_tables
 from .profiles import ModelProfile
-
-MODELS = ("squeezenet1_1", "swin_v2_t", "efficientnet_b4", "resnet50", "densenet169")
 
 
 def tables(root: Path, results: dict) -> dict[str, list[dict]]:
     configs = json.loads((root / "experiments/main.json").read_text())
     nominal = {row["model"]: row for row in configs if row["level"] == "selected"}
     schedule = OrbitSchedule()
-    parameters, candidates, points, reductions = [], [], [], []
+    parameters, candidates, reductions = [], [], []
+    candidate_data = candidate_tables(root)
     for model in MODELS:
         config = nominal[model]
         path = root / "data/model-profiles" / f"{model}.json"
@@ -71,17 +71,6 @@ def tables(root: Path, results: dict) -> dict[str, list[dict]]:
                 "anoda_graph_reduction_pct": 100 * (1 - len(anoda) / len(graph_rows)),
             }
         )
-        if model == "swin_v2_t":
-            for method, selected in (("DNNSplit", dnnsplit), ("ANODA", anoda)):
-                points.extend(
-                    {
-                        "method": method,
-                        "layer": point.layer,
-                        "work_gflops": point.work_flops / 1e9,
-                        "payload_mbit": point.payload_bits / 1e6,
-                    }
-                    for point in selected
-                )
     outcomes = []
     for row in results["figure7"]["rows"]:
         if row["level"] == "nominal" and row["policy"] in ("STLT", "SLICE"):
@@ -170,21 +159,35 @@ def tables(root: Path, results: dict) -> dict[str, list[dict]]:
         "table1_parameters.csv": parameters,
         "table2_candidates.csv": candidates,
         "table4_task_outcomes.csv": outcomes,
-        "figure5_points.csv": points,
+        "figure5_points.csv": candidate_data["candidates-swin_v2_t.csv"],
         "figure6_reduction.csv": reductions,
         "paper_claims.csv": claims,
+        **candidate_data,
     }
 
 
-def export(root: Path, output: Path, results: dict, mode: str) -> None:
-    from .figures import figure5, figure6, figure7, figure8
-
-    generated = tables(root, results)
+def _write_tables(generated: dict[str, list[dict]], output: Path) -> None:
     for name, rows in generated.items():
         with (output / name).open("w", newline="") as stream:
             writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
             writer.writeheader()
             writer.writerows(rows)
+
+
+def export_candidate_analysis(root: Path, output: Path) -> None:
+    from .figures import candidate_figures
+
+    generated = candidate_tables(root)
+    _write_tables(generated, output)
+    candidate_figures(generated, output)
+
+
+def export(root: Path, output: Path, results: dict, mode: str) -> None:
+    from .figures import candidate_figures, figure5, figure6, figure7, figure8
+
+    generated = tables(root, results)
+    _write_tables(generated, output)
+    candidate_figures(generated, output)
     figure5(generated["figure5_points.csv"], output / "figure5.pdf")
     figure6(generated["figure6_reduction.csv"], output / "figure6.pdf")
     figure7(results["figure7"], output / "figure7.pdf")
@@ -199,6 +202,7 @@ def export(root: Path, output: Path, results: dict, mode: str) -> None:
         "| Table 1 numerical parameters | table1_parameters.csv |\n"
         "| Table 2 split candidates | table2_candidates.csv |\n"
         "| Figure 5 Swin candidate plane | figure5.pdf, figure5_points.csv |\n"
+        "| Supplemental candidate analysis: all five models | candidates-MODEL.csv/.pdf/.png, candidate-analysis.pdf/.png |\n"
         "| Figure 6 search-space reduction | figure6.pdf, figure6_reduction.csv |\n"
         "| Figure 7 energy and delivery | figure7.pdf, main-per-window.csv |\n"
         "| Figure 8 resource sensitivity | figure8.pdf, resource-per-window.csv |\n"

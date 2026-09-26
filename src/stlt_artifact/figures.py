@@ -11,13 +11,8 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
 import numpy as np
 
-MODELS = (
-    "squeezenet1_1",
-    "swin_v2_t",
-    "efficientnet_b4",
-    "resnet50",
-    "densenet169",
-)
+from .candidate_analysis import MODELS
+
 LABELS = ("SqueezeNet1.1", "Swin-V2-T", "EfficientNet-B4", "ResNet50", "DenseNet169")
 POLICIES = ("STLT", "SLICE", "TOBC", "TOGC", "RAND")
 COLORS = {
@@ -27,6 +22,79 @@ COLORS = {
     "TOGC": "#9c6644",
     "RAND": "#8d6cab",
 }
+
+
+def _candidate_panel(axis, rows: list[dict], label: str) -> None:
+    selected = {
+        method: [r for r in rows if r["method"] == method]
+        for method in ("DNNSplit", "ANODA")
+    }
+    for method, color, style, marker in (
+        ("DNNSplit", "#333333", "--", "o"),
+        ("ANODA", "#d55e00", "-", "x"),
+    ):
+        points = selected[method]
+        axis.plot(
+            [r["work_gflops"] for r in points],
+            [r["payload_mbit"] for r in points],
+            color=color,
+            linestyle=style,
+            marker=marker,
+            markerfacecolor="white",
+            markersize=6,
+            label=method,
+        )
+    retained = {r["layer"] for r in selected["ANODA"]}
+    pruned = [r["layer"] for r in selected["DNNSplit"] if r["layer"] not in retained]
+    detail = (
+        "Pruned layers: " + ", ".join(map(str, pruned))
+        if pruned
+        else "No additional pruning"
+    )
+    axis.set_title(
+        f"{label}\nDNNSplit: {len(selected['DNNSplit'])}; ANODA: {len(retained)}",
+        fontsize=10,
+    )
+    axis.set(
+        xlabel="Cumulative computation (GFLOPs)", ylabel="Intermediate data (Mbit)"
+    )
+    axis.text(
+        0.98, 0.92, detail, transform=axis.transAxes, ha="right", va="top", fontsize=9
+    )
+    axis.grid(alpha=0.25)
+    axis.set_axisbelow(True)
+
+
+def candidate_figures(generated: dict[str, list[dict]], output: Path) -> None:
+    with plt.rc_context({"font.size": 9, "pdf.fonttype": 42}):
+        overview, axes = plt.subplots(2, 3, figsize=(15, 8), layout="constrained")
+        for model, label, axis in zip(MODELS, LABELS, axes.flat):
+            rows = generated[f"candidates-{model}.csv"]
+            _candidate_panel(axis, rows, label)
+            figure, single = plt.subplots(figsize=(7.2, 4.5), layout="constrained")
+            _candidate_panel(single, rows, label)
+            single.legend(
+                loc="upper center", bbox_to_anchor=(0.5, -0.2), ncol=2, frameon=False
+            )
+            for extension in ("pdf", "png"):
+                figure.savefig(output / f"candidates-{model}.{extension}", dpi=180)
+            plt.close(figure)
+        legend = axes.flat[-1]
+        legend.axis("off")
+        handles, labels = axes.flat[0].get_legend_handles_labels()
+        legend.legend(handles, labels, loc="center", frameon=False)
+        legend.text(
+            0.5,
+            0.27,
+            "Recorded 4096 × 4096 float32 profiles\nEach panel uses its own axis limits.\nPruning is relative to DNNSplit.",
+            ha="center",
+            va="center",
+            transform=legend.transAxes,
+            linespacing=1.6,
+        )
+        for extension in ("pdf", "png"):
+            overview.savefig(output / f"candidate-analysis.{extension}", dpi=180)
+        plt.close(overview)
 
 
 def figure5(rows: list[dict], output: Path) -> None:

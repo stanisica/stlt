@@ -5,6 +5,8 @@ from __future__ import annotations
 import hashlib
 from pathlib import Path
 
+from .candidate_analysis import CANDIDATE_OUTPUTS
+
 SEGMENTS = {"smoke": 1, "full": 220}
 COUNT_FIELDS = (
     "offered",
@@ -40,7 +42,7 @@ OUTPUTS = (
     "figure7.pdf",
     "figure8.pdf",
     "MANIFEST.md",
-)
+) + CANDIDATE_OUTPUTS
 
 
 def digest(path: Path) -> str:

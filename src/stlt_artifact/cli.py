@@ -13,8 +13,9 @@ import urllib.request
 from pathlib import Path
 
 from .bundle import OUTPUTS, SEGMENTS, digest, source_hashes
+from .candidate_analysis import CANDIDATE_OUTPUTS
 from .experiments import run_suite, summarize_main, summarize_resource
-from .exports import export
+from .exports import export, export_candidate_analysis
 from .telemetry import BUPT1_SHA256
 from .validation import ValidationReport, validate
 
@@ -32,9 +33,15 @@ def parser() -> argparse.ArgumentParser:
         "download", help="download and verify the upstream telemetry"
     )
     download.add_argument("--archive", type=Path)
+    analysis = commands.add_parser(
+        "analyze-candidates",
+        help="plot candidate sets for all models without telemetry",
+    )
+    analysis.add_argument("--output-dir", type=Path)
     for name in ("reproduce", "validate"):
         command = commands.add_parser(name)
-        command.add_argument("--mode", choices=tuple(SEGMENTS), default="full")
+        modes = (*SEGMENTS, "candidates") if name == "validate" else tuple(SEGMENTS)
+        command.add_argument("--mode", choices=modes, default="full")
         command.add_argument("--output-dir", type=Path)
         if name == "reproduce":
             command.add_argument("--archive", type=Path)
@@ -79,8 +86,8 @@ def download(archive: Path) -> None:
     print(f"Telemetry verified: {archive}")
 
 
-def reproduce(root: Path, archive: Path, output: Path, mode: str) -> None:
-    if not archive.is_file():
+def reproduce(root: Path, archive: Path | None, output: Path, mode: str) -> None:
+    if mode != "candidates" and (archive is None or not archive.is_file()):
         raise ValueError(
             "telemetry is missing; run ./scripts/download_data.sh or supply --archive PATH"
         )
@@ -89,45 +96,49 @@ def reproduce(root: Path, archive: Path, output: Path, mode: str) -> None:
             f"output directory is not empty: {output}; select a new --output-dir"
         )
     started = time.monotonic()
-    if digest(archive) != BUPT1_SHA256:
+    if mode != "candidates" and digest(archive) != BUPT1_SHA256:
         raise ValueError("telemetry archive SHA-256 mismatch")
     _report(validate(root, mode="inputs"))
     output.mkdir(parents=True, exist_ok=True)
     metadata = {
         "status": "running",
         "mode": mode,
-        "segments": SEGMENTS[mode],
         "python": sys.version,
         "platform": platform.platform(),
         "dependencies": {
             d.metadata["Name"]: d.version for d in importlib.metadata.distributions()
         },
-        "telemetry_sha256": BUPT1_SHA256,
         "source_sha256": source_hashes(root),
     }
+    if mode != "candidates":
+        metadata.update(segments=SEGMENTS[mode], telemetry_sha256=BUPT1_SHA256)
     _write_json(output / "metadata.json", metadata)
     try:
-        result = {"segments": SEGMENTS[mode], "archive_sha256": BUPT1_SHA256}
-        for suite, key, summarize in (
-            ("main", "figure7", summarize_main),
-            ("resource", "figure8", summarize_resource),
-        ):
-            rows = run_suite(
-                root,
-                archive,
-                suite,
-                output / f"{suite}-per-window.csv",
-                segment_count=SEGMENTS[mode],
-            )
-            result[key] = summarize(rows)
-        _write_json(output / "paper-results.json", result)
-        export(root, output, result, mode)
+        if mode == "candidates":
+            export_candidate_analysis(root, output)
+        else:
+            result = {"segments": SEGMENTS[mode], "archive_sha256": BUPT1_SHA256}
+            for suite, key, summarize in (
+                ("main", "figure7", summarize_main),
+                ("resource", "figure8", summarize_resource),
+            ):
+                rows = run_suite(
+                    root,
+                    archive,
+                    suite,
+                    output / f"{suite}-per-window.csv",
+                    segment_count=SEGMENTS[mode],
+                )
+                result[key] = summarize(rows)
+            _write_json(output / "paper-results.json", result)
+            export(root, output, result, mode)
+        outputs = CANDIDATE_OUTPUTS if mode == "candidates" else OUTPUTS
         metadata.update(
             status="complete",
             elapsed_s=time.monotonic() - started,
             peak_memory_bytes=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
             * (1 if sys.platform == "darwin" else 1024),
-            outputs={name: digest(output / name) for name in OUTPUTS},
+            outputs={name: digest(output / name) for name in outputs},
         )
         _write_json(output / "metadata.json", metadata)
     except (Exception, KeyboardInterrupt) as error:
@@ -151,6 +162,13 @@ def main() -> None:
             _report(validate(root, mode="inputs"))
         elif args.command == "download":
             download(args.archive or root / "datasets/telemetry_all.csv.zip")
+        elif args.command == "analyze-candidates":
+            reproduce(
+                root,
+                None,
+                args.output_dir or root / "artifact-output/candidates",
+                "candidates",
+            )
         else:
             output = args.output_dir or root / "artifact-output" / args.mode
             if args.command == "validate":

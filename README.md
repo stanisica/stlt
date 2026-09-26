@@ -54,6 +54,29 @@ See [data/README.md](data/README.md) for provenance and distribution limits.
 
 ## Quick functional check
 
+To inspect candidate pruning for all five models without downloading telemetry:
+
+```bash
+./scripts/analyze_candidates.sh
+```
+
+This writes `artifact-output/candidates/` with one CSV, PDF, and PNG per model,
+plus `candidate-analysis.pdf` and `candidate-analysis.png` as a combined overview.
+Each plot compares DNNSplit with ANODA and lists the pruned layers. Overlapping
+candidates use distinct markers. SqueezeNet1.1 has no additional ANODA pruning.
+The overview uses independent axis limits for each model.
+
+These are supplemental analyses from the recorded profiles. The Swin plot
+remains the paper's Figure 5. The smoke and full workflows also generate all
+supplemental plots automatically. Candidate analysis requires setup but no
+telemetry, VPN, or Jetson. To validate its outputs separately:
+
+```bash
+./scripts/validate_results.sh --mode candidates
+```
+
+To exercise the telemetry replay as well:
+
 ```bash
 ./scripts/smoke_test.sh
 ```
@@ -127,6 +150,7 @@ and full validation are distinct operations.
 | Table 1: constants and workloads | `table1_parameters.csv` | Exact simulation constants and nominal workloads. Solar power comes from the telemetry; the paper's descriptive 0–50 W range is not imposed as a simulation limit. |
 | Table 2: split candidates | `table2_candidates.csv` | DNNSplit and ANODA sets recomputed from the recorded profiles. |
 | Figure 5: Swin candidate plane | `figure5.pdf`, `figure5_points.csv` | ANODA removes layer 271 from the DNNSplit set. |
+| Supplemental candidate planes: all models | `candidates-MODEL.csv`, `.pdf`, `.png`; `candidate-analysis.pdf`, `.png` | Candidate coordinates, individual plots, and a combined overview. These extend the paper's representative Swin analysis. |
 | Figure 6: search-space reduction | `figure6.pdf`, `figure6_reduction.csv` | Candidate counts and reductions, normalized by all graph positions as in the paper. |
 | Figure 7: energy and delivery | `figure7.pdf`, `main-per-window.csv` | Nominal workloads; logarithmic energy axis; delivery whiskers show one sample standard deviation. |
 | Figure 8: resource sensitivity | `figure8.pdf`, `resource-per-window.csv` | Mean deliveries for the EO-budget and downlink-rate sweeps. |

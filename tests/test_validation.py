@@ -9,6 +9,7 @@ from unittest.mock import patch
 import numpy as np
 
 from stlt_artifact.bundle import OUTPUTS, digest, source_hashes
+from stlt_artifact.candidate_analysis import CANDIDATE_OUTPUTS
 from stlt_artifact.experiments import run_suite, summarize_main, summarize_resource
 from stlt_artifact.exports import export
 from stlt_artifact.telemetry import BUPT1_SHA256, TelemetryTrace
@@ -134,6 +135,38 @@ class ValidationTest(unittest.TestCase):
     def test_missing_plot_fails(self):
         (self.output / "figure7.pdf").unlink()
         self.assert_failure("required output: figure7.pdf")
+
+    def test_missing_supplemental_model_plot_fails(self):
+        (self.output / "candidates-resnet50.png").unlink()
+        self.assert_failure("required output: candidates-resnet50.png")
+
+    def test_candidate_coordinates_are_checked_after_rehash(self):
+        name = "candidates-densenet169.csv"
+        path = self.output / name
+        with path.open(newline="") as stream:
+            rows = list(csv.DictReader(stream))
+        rows[0]["payload_mbit"] = "1"
+        with path.open("w", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+            writer.writeheader()
+            writer.writerows(rows)
+        self.rehash(name)
+        self.assert_failure(f"derived table: {name}")
+
+    def test_candidate_bundle_does_not_require_replay_outputs(self):
+        for name in set(OUTPUTS) - set(CANDIDATE_OUTPUTS):
+            (self.output / name).unlink()
+        path = self.output / "metadata.json"
+        metadata = json.loads(path.read_text())
+        metadata["mode"] = "candidates"
+        metadata.pop("segments")
+        metadata.pop("telemetry_sha256")
+        metadata["outputs"] = {
+            name: metadata["outputs"][name] for name in CANDIDATE_OUTPUTS
+        }
+        path.write_text(json.dumps(metadata))
+        report = self.report("candidates")
+        self.assertTrue(report.ok, report.failed)
 
     def test_truncated_csv_fails_after_rehash(self):
         self.edit_rows(lambda rows: rows.pop())

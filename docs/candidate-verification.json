@@ -1,0 +1,17 @@
+{
+  "scope": "Supplemental candidate analysis for all five models; no fresh full telemetry replay.",
+  "unit_tests_passed": 30,
+  "paper_figure5_coordinates_unchanged": true,
+  "runs": {
+    "candidates": {
+      "elapsed_s": 1.2587924580002436,
+      "validation_passed": 155,
+      "validation_failed": 0
+    },
+    "smoke": {
+      "elapsed_s": 4.274816582998028,
+      "validation_passed": 200,
+      "validation_failed": 0
+    }
+  }
+}
