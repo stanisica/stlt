@@ -14,7 +14,7 @@ from .arrivals import OrbitSchedule
 from .energy import EnergyModel
 from .planner import SlicePlan, plan_slice
 from .policy import AnelaPolicy
-from .profiles import ModelProfile, SplitPoint, points_by_layer
+from .profiles import ModelProfile, points_by_layer
 from .simulator import SimulationResult, TelemetrySimulator
 from .telemetry import TelemetryTrace, segments
 
@@ -281,7 +281,7 @@ def summarize_main(rows: Iterable[dict[str, object]]) -> dict[str, object]:
     return {
         "rows": output,
         "figure_caption": (
-            "Simulated EO energy per offered task and delivery rate across 220 "
+            f"Simulated EO energy per offered task and delivery rate across {len(by_window)} "
             "five-orbit segments. Energy bars separate effective and wasted EO "
             "energy. Delivery bars show means and whiskers show plus or minus one "
             "sample standard deviation across segments. RAND is averaged over five "

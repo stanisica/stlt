@@ -27,6 +27,12 @@ found at the evaluated upstream revision.
 
 The replay checks this digest before executing the paper experiments.
 
+Run `./scripts/download_data.sh` to acquire and verify the archive. The download
+is approximately 77 MiB. An existing verified archive can be supplied with
+`--archive PATH`. The ZIP is streamed directly; no extraction is required.
+The downloader fetches from the upstream repository, not from a redistributed
+copy. Keep the downloaded archive if offline execution is required.
+
 ## Expected and reference results
 
 `expected/paper-results.json` contains the exact values used to refresh the
@@ -34,3 +40,8 @@ paper's figures and numerical claims. `reference-results/` contains aggregate
 outputs from the independently verified formula-aligned run. They are
 regression oracles, not substitutes for rerunning the simulator.
 
+The portable workflow reruns candidate selection from the recorded profiles.
+It does not regenerate the TorchFX profiles or recalibrate the energy model.
+The source paper uses rounded constants in Table 1; the experiment JSON files
+retain the evaluated precision. Configuration hashes are recorded in
+`experiments/SHA256SUMS`.

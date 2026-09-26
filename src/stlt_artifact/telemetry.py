@@ -110,8 +110,9 @@ def segments(
 
     if samples <= 0:
         raise ValueError("samples must be positive")
-    stop_after = max(wanted) if wanted else None
-    wanted = wanted if wanted is not None else set(range(10**9))
+    if wanted is not None and not wanted:
+        return
+    stop_after = max(wanted) if wanted is not None else None
     segment_index = 0
     position = 0
     previous: datetime | None = None
@@ -121,11 +122,11 @@ def segments(
         if previous is not None and (current - previous).total_seconds() != 1:
             position = 0
             buffer = []
-        if segment_index in wanted:
+        if wanted is None or segment_index in wanted:
             buffer.append(derive_sample(row))
         position += 1
         if position == samples:
-            if segment_index in wanted:
+            if wanted is None or segment_index in wanted:
                 yield segment_index, trace_from_samples(buffer)
             segment_index += 1
             position = 0
