@@ -51,13 +51,6 @@ class ModelProfile:
         return tuple(selected)
 
     def anoda_candidates(self) -> tuple[SplitPoint, ...]:
-        """Lower hull of the running-payload-minimum candidate sequence.
-
-        This is the exact evaluated ANODA pipeline: invalid graph cuts are
-        removed, the DNNSplit running-minimum candidates are formed, and ANODA
-        retains the lower-hull vertices of that sequence.
-        """
-
         ordered = sorted(
             self.dnnsplit_candidates(),
             key=lambda point: (point.work_flops, point.payload_bits, point.layer),

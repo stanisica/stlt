@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from collections import Counter, deque
 from dataclasses import dataclass
+import math
 import random
 from typing import Deque
 
@@ -17,7 +18,6 @@ from .telemetry import TelemetryTrace
 @dataclass
 class _QueuedTask:
     remaining_bits: float
-    layer: int
     computation_j: float
     communication_spent_j: float = 0.0
 
@@ -34,7 +34,6 @@ class SimulationResult:
     compute_energy_j: float
     communication_energy_j: float
     selected_layers: dict[str, int]
-    rejection_reasons: dict[str, int]
     max_accounting_error_j: float
     wasted_compute_j: float = 0.0
     wasted_communication_j: float = 0.0
@@ -77,7 +76,6 @@ class TelemetrySimulator:
         committed = 0.0
         max_error = 0.0
         selected: Counter[str] = Counter()
-        rejection_reasons: Counter[str] = Counter()
         previous_in_contact = False
         initial_battery = float(trace.battery_energy_j[0])
 
@@ -132,7 +130,6 @@ class TelemetrySimulator:
                 decision = policy.decide(
                     SatelliteState(
                         remaining_eo_j=remaining,
-                        time_in_computation_s=cycle_position,
                         forecast_until_contact_j=self.rho * (at_contact - now),
                         forecast_during_contact_j=self.rho
                         * (after_contact - at_contact),
@@ -146,7 +143,6 @@ class TelemetrySimulator:
                 )
                 if decision.split is None:
                     rejected += 1
-                    rejection_reasons[decision.reason] += 1
                 else:
                     computation_j = self.energy.computation_energy(
                         decision.split.work_flops
@@ -156,7 +152,6 @@ class TelemetrySimulator:
                     queue.append(
                         _QueuedTask(
                             remaining_bits=decision.split.payload_bits,
-                            layer=decision.split.layer,
                             computation_j=computation_j,
                         )
                     )
@@ -170,6 +165,8 @@ class TelemetrySimulator:
                 committed
                 - (computation_spent + communication_spent + reserved)
             )
+            if not math.isfinite(error):
+                raise AssertionError("energy reservation accounting is non-finite")
             max_error = max(max_error, error)
             previous_in_contact = in_contact
 
@@ -185,6 +182,8 @@ class TelemetrySimulator:
 
         actual_spent = computation_spent + communication_spent
         max_error = max(max_error, abs(committed - actual_spent))
+        if max_error > 1e-6:
+            raise AssertionError(f"energy reservation accounting failed: {max_error} J")
         if offered != admitted + rejected:
             raise AssertionError("offered-task accounting failed")
         if admitted != delivered + admitted_not_delivered:
@@ -200,7 +199,6 @@ class TelemetrySimulator:
             compute_energy_j=computation_spent,
             communication_energy_j=communication_spent,
             selected_layers=dict(selected),
-            rejection_reasons=dict(rejection_reasons),
             max_accounting_error_j=max_error,
             wasted_compute_j=wasted_computation,
             wasted_communication_j=wasted_communication,
@@ -212,13 +210,6 @@ class TelemetrySimulator:
         interval_s: int,
         split: SplitPoint,
     ) -> SimulationResult:
-        """Replay the frozen split selected offline by SLICE.
-
-        SLICE checks only whether the current EO margin can pay the task's
-        computation. It does not reserve its future communication energy.
-        Undelivered tasks expire at the next orbit boundary.
-        """
-
         self._check_trace(trace)
         queue: Deque[_QueuedTask] = deque()
         offered = admitted = delivered = rejected = expired = 0
@@ -273,7 +264,6 @@ class TelemetrySimulator:
                     queue.append(
                         _QueuedTask(
                             remaining_bits=split.payload_bits,
-                            layer=split.layer,
                             computation_j=computation_j,
                         )
                     )
@@ -382,9 +372,7 @@ class TelemetrySimulator:
                 spent_compute += required
                 admitted += 1
                 selected[str(split.layer)] += 1
-                queue.append(
-                    _QueuedTask(split.payload_bits, split.layer, required)
-                )
+                queue.append(_QueuedTask(split.payload_bits, required))
             else:
                 failed += 1
                 spent_compute += available
@@ -468,7 +456,6 @@ class TelemetrySimulator:
             compute_energy_j=computation_spent,
             communication_energy_j=communication_spent,
             selected_layers=dict(selected),
-            rejection_reasons={},
             max_accounting_error_j=0.0,
             wasted_compute_j=wasted_computation,
             wasted_communication_j=wasted_communication,

@@ -184,6 +184,71 @@ class ValidationTest(unittest.TestCase):
         self.edit_rows(lambda rows: rows[0].update(energy_j="nan"))
         self.assert_failure("non-finite")
 
+    def test_failed_attempts_match_unstarted_tasks(self):
+        def edit(rows):
+            row = next(row for row in rows if row["policy"] == "TOBC")
+            row.update(
+                failed_computation_attempts="999999",
+                partial_computation_attempts="999999",
+            )
+
+        self.edit_rows(edit)
+        self.assert_failure("failed attempt accounting")
+
+    def test_failed_attempt_categories_sum_to_total(self):
+        def edit(rows):
+            row = next(row for row in rows if row["policy"] == "TOBC")
+            row["zero_energy_failed_attempts"] = "999999"
+
+        self.edit_rows(edit)
+        self.assert_failure("failed attempt categories")
+
+    def test_attempted_layers_match_offered_tasks(self):
+        def edit(rows):
+            row = next(row for row in rows if row["policy"] == "TOBC")
+            counts = json.loads(row["attempted_layers"])
+            counts[next(iter(counts))] = 999999
+            row["attempted_layers"] = json.dumps(counts)
+
+        self.edit_rows(edit)
+        self.assert_failure("attempted layer count differs from offered tasks")
+
+    def test_selected_layers_cannot_exceed_attempts(self):
+        def edit(rows):
+            row = next(
+                row
+                for row in rows
+                if row["policy"] == "RAND"
+                and len(json.loads(row["selected_layers"])) > 1
+            )
+            counts = json.loads(row["attempted_layers"])
+            layer = next(iter(json.loads(row["selected_layers"])))
+            other = next(key for key in counts if key != layer)
+            counts[other] += counts[layer]
+            counts[layer] = 0
+            row["attempted_layers"] = json.dumps(counts)
+
+        self.edit_rows(edit)
+        self.assert_failure("selected layer count exceeds attempts")
+
+    def test_admission_policies_have_no_attempt_diagnostics(self):
+        for policy in ("STLT", "SLICE"):
+            with self.subTest(policy=policy):
+                def edit(rows):
+                    row = next(
+                        row for row in rows
+                        if row["policy"] == policy and row["status"] == "ok"
+                    )
+                    row["failed_computation_attempts"] = "1"
+
+                self.edit_rows(edit)
+                self.assert_failure("unexpected attempt diagnostics")
+                shutil.copyfile(
+                    self.fixture / "main-per-window.csv",
+                    self.output / "main-per-window.csv",
+                )
+                self.rehash("main-per-window.csv")
+
     def test_wrong_seed_fails(self):
         self.edit_rows(lambda rows: rows[4].update(seed="99"))
         self.assert_failure("coverage")
@@ -206,6 +271,17 @@ class ValidationTest(unittest.TestCase):
     def test_corrupt_metadata_fails(self):
         (self.output / "metadata.json").write_text("{")
         self.assert_failure("invalid result bundle")
+
+    def test_output_manifest_must_be_an_object(self):
+        path = self.output / "metadata.json"
+        metadata = json.loads(path.read_text())
+        metadata["outputs"] = list(metadata["outputs"])
+        path.write_text(json.dumps(metadata))
+        self.assert_failure("outputs must be an object")
+
+    def test_metadata_must_be_an_object(self):
+        (self.output / "metadata.json").write_text("[]")
+        self.assert_failure("metadata must be an object")
 
     def test_interrupted_run_fails(self):
         path = self.output / "metadata.json"

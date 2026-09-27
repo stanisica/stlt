@@ -36,7 +36,6 @@ class SlicePlan:
 class _Candidate:
     layer: int
     target: str
-    work_flops: int
     payload_bits: float
     compute_j: float
     transmission_j: float
@@ -61,13 +60,6 @@ def plan_slice(
     ground_seconds_per_byte: float = 1e-12,
     schedule: OrbitSchedule = OrbitSchedule(),
 ) -> SlicePlan:
-    """Solve the exact workload-level fixed-split problem used in evaluation.
-
-    This is the two-node specialization of the corrected SLICE equations used
-    by the paper. Keeping the equations here avoids shipping the historical
-    import-and-patch chain while preserving its evaluated decisions.
-    """
-
     if interval_s <= 0 or rate_mbps <= 0:
         raise ValueError("interval and downlink rate must be positive")
     tasks_by_cycle = schedule.tasks_by_cycle(interval_s)
@@ -125,7 +117,6 @@ def plan_slice(
             _Candidate(
                 layer=int(row["idx"]),
                 target=str(row.get("target", f"layer_{row['idx']}")),
-                work_flops=work_flops,
                 payload_bits=data_bits,
                 compute_j=compute_j,
                 transmission_j=transmission_j,

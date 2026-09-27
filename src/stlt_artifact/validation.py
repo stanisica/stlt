@@ -277,6 +277,7 @@ def _rows(root: Path, output: Path, suite: str, count: int) -> list[dict]:
             valid_layers = {str(c["layer_index"]) for c in config["candidates"]}
             if row["policy"] == "SLICE":
                 valid_layers.add(layer)
+            histograms = {}
             for key in ("selected_layers", "attempted_layers"):
                 histogram = json.loads(row[key])
                 _require(
@@ -287,11 +288,48 @@ def _rows(root: Path, output: Path, suite: str, count: int) -> list[dict]:
                     all(type(v) is int and v >= 0 for v in histogram.values()),
                     f"invalid counts in {key}",
                 )
+                histograms[key] = histogram
                 if key == "selected_layers":
                     _require(
                         sum(histogram.values()) == values["admitted"],
                         "selected layer count differs from admissions",
                     )
+            if row["policy"] in {"TOBC", "TOGC", "RAND"}:
+                _require(
+                    values["failed_computation_attempts"] == values["not_started"],
+                    "failed attempt accounting",
+                )
+                _require(
+                    values["failed_computation_attempts"]
+                    == values["partial_computation_attempts"]
+                    + values["zero_energy_failed_attempts"],
+                    "failed attempt categories",
+                )
+                _require(
+                    sum(histograms["attempted_layers"].values()) == values["offered"],
+                    "attempted layer count differs from offered tasks",
+                )
+                _require(
+                    all(
+                        count <= histograms["attempted_layers"].get(layer, 0)
+                        for layer, count in histograms["selected_layers"].items()
+                    ),
+                    "selected layer count exceeds attempts",
+                )
+            else:
+                _require(
+                    not histograms["attempted_layers"]
+                    and all(
+                        values[key] == 0
+                        for key in (
+                            "failed_computation_attempts",
+                            "partial_computation_attempts",
+                            "zero_energy_failed_attempts",
+                            "partial_computation_waste_j",
+                        )
+                    ),
+                    "unexpected attempt diagnostics",
+                )
         except (KeyError, TypeError, ValueError) as error:
             raise ValueError(f"CSV line {index}: {error}") from error
     return rows
@@ -336,6 +374,8 @@ def validate(
         return report
     try:
         metadata = json.loads((output / "metadata.json").read_text())
+        _require(isinstance(metadata, dict), "metadata must be an object")
+        _require(isinstance(metadata["outputs"], dict), "outputs must be an object")
         report.check(metadata["status"] == "complete", "run completed")
         report.check(metadata["mode"] == mode, "run mode")
         report.check(

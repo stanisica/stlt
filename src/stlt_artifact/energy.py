@@ -52,13 +52,6 @@ class EnergyModel:
         forecast_until_contact_j: float,
         split: SplitPoint,
     ) -> float:
-        """Projected physical EO energy at the start of contact.
-
-        ``remaining_j`` excludes queued communication reservations. They are
-        restored for this projection because the corresponding queued payloads
-        appear on the transmission requirement side of the feasibility check.
-        """
-
         projected = (
             remaining_j
             + reserved_communication_j

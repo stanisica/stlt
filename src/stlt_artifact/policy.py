@@ -1,9 +1,9 @@
-"""Policy interface and the paper-aligned ANELA adapter."""
+"""ANELA admission and split selection."""
 
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Protocol, Sequence
+from typing import Sequence
 
 from .energy import EnergyModel
 from .profiles import SplitPoint
@@ -12,7 +12,6 @@ from .profiles import SplitPoint
 @dataclass(frozen=True)
 class SatelliteState:
     remaining_eo_j: float
-    time_in_computation_s: float
     forecast_until_contact_j: float
     forecast_during_contact_j: float
     queued_bits: float
@@ -34,25 +33,8 @@ class Decision:
     energy_j: float
     reason: str
 
-    @property
-    def admitted(self) -> bool:
-        return self.split is not None
-
-
-class Policy(Protocol):
-    def decide(self, state: SatelliteState) -> Decision: ...
-
 
 class AnelaPolicy:
-    """Greedy per-task ANELA policy evaluated by the paper.
-
-    The low-budget reservation branch is intentionally preserved: when the
-    remaining budget cannot cover the maximum possible downlink energy of the
-    contacts still ahead, ANELA evaluates only the unconstrained minimum-energy
-    split. This is evaluated behavior, not a guarantee that no other candidate
-    in the complete set is feasible.
-    """
-
     def __init__(
         self,
         candidates: Sequence[SplitPoint],
@@ -62,10 +44,6 @@ class AnelaPolicy:
             raise ValueError("ANELA requires at least one candidate split")
         self._candidates = tuple(candidates)
         self._energy = energy
-
-    @property
-    def candidates(self) -> tuple[SplitPoint, ...]:
-        return self._candidates
 
     def decide(self, state: SatelliteState) -> Decision:
         downlink_reserve_j = self._energy.communication_energy(
@@ -114,4 +92,3 @@ class AnelaPolicy:
 
         split, energy_j = min(feasible, key=lambda item: item[1])
         return Decision(split, energy_j, "minimum_energy_feasible_candidate")
-

@@ -10,13 +10,6 @@ EventKind = Literal["arrival", "contact"]
 
 @dataclass(frozen=True)
 class OrbitSchedule:
-    """A deterministic sequence of computation and ground-contact phases.
-
-    Arrivals reset at the beginning of every orbit. This implements the paper's
-    definition ``I_k = floor(T_comp / Delta)`` exactly. The first capture in an
-    orbit occurs at ``Delta``, not at time zero.
-    """
-
     computation_s: int = 5_100
     contact_s: int = 300
     cycles: int = 5
