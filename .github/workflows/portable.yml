@@ -1,0 +1,33 @@
+name: Portable artifact
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Experiment scope
+        type: choice
+        options: [smoke, full]
+        default: smoke
+permissions:
+  contents: read
+jobs:
+  reproduce:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.9'
+      - run: ./scripts/create_env.sh
+      - run: ./scripts/check_env.sh
+      - run: ./scripts/download_data.sh
+      - run: ./reproduce_paper_artifacts.sh --mode "$RUN_MODE"
+        env:
+          RUN_MODE: ${{ inputs.mode || 'smoke' }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: portable-results
+          path: artifact-output/

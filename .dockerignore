@@ -1,0 +1,9 @@
+.git
+.stlt-venv
+.venv
+.artifact-cache
+artifact-output
+datasets
+dist
+**/__pycache__
+**/*.egg-info

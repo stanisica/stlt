@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterable, Sequence
+from typing import Iterable
 
 
 @dataclass(frozen=True)
@@ -51,13 +51,6 @@ class ModelProfile:
         return tuple(selected)
 
     def anoda_candidates(self) -> tuple[SplitPoint, ...]:
-        """Lower hull of the running-payload-minimum candidate sequence.
-
-        This is the exact evaluated ANODA pipeline: invalid graph cuts are
-        removed, the DNNSplit running-minimum candidates are formed, and ANODA
-        retains the lower-hull vertices of that sequence.
-        """
-
         ordered = sorted(
             self.dnnsplit_candidates(),
             key=lambda point: (point.work_flops, point.payload_bits, point.layer),
